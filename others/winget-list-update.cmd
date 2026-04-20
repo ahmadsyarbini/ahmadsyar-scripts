@@ -1,0 +1,1 @@
+winget list --upgrade-available --source=winget --include-unknown && pause

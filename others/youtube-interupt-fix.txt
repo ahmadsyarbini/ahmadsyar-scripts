@@ -1,0 +1,8 @@
+youtube interuption fix, add to your adblocker custom filter
+
+www.youtube.com###text-container > .yt-notification-action-renderer.style-scope
+www.youtube.com###toast > .yt-notification-action-renderer.style-scope
+www.youtube.com##.paper-toast-open.yt-notification-action-renderer.style-scope.toast-button
+
+https://www.reddit.com/r/youtube/comments/1la6tkm/anybody_noticed_that_youtube_is_displaying_the/
+original link : https://www.reddit.com/r/youtube/comments/1l8ak1x/ublock_and_youtube_experiencing_interruptions/

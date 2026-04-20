@@ -1,0 +1,10 @@
+7z
+adb
+Autologon64
+Autoruns
+rclone
+robocopy
+uad-ng
+ventoy2disk
+wgcf
+winget

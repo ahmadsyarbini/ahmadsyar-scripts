@@ -1,0 +1,20 @@
+Steps to Repair WinGet
+
+1. Install Necessary Modules
+
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+
+2. Repair WinGet Package Manager
+
+Repair-WinGetPackageManager -Force -Latest
+
+3. Update WinGet Sources
+
+winget source update
+
+4. Re-register WinGet Using PowerShell
+
+If the above steps do not resolve the issue, you can re-register WinGet using PowerShell:
+
+Add-AppxPackage -DisableDevelopmentMode -Register "C:\Program Files\WindowsApps\Microsoft.Winget.Source_2021.718.1322.843_neutral__8wekyb3d8bbwe\AppXManifest.xml" -Verbose
