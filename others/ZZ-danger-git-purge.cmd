@@ -1,10 +1,19 @@
 @echo off
+setlocal
 REM =========================================
 REM FULL RESET + SHRINK .GIT FOR WINDOWS CMD
 REM =========================================
 
+REM set variable
+set "GIT_PATH=%userprofile%\My Drive\Documents\Tech"
+
 REM Change to your project directory
-cd /d "%userprofile%\My Drive\Documents\Tech"
+if not exist "%GIT_PATH%" (
+    echo folder not found. exiting...
+    timeout /t 5 /nobreak >nul
+    exit /b
+)
+cd /d "%GIT_PATH%"
 
 REM --- Delete existing .git folder ---
 if exist ".git" (
@@ -44,4 +53,4 @@ git push -u origin main --force
 
 echo =========================================
 echo Done! .git has been reset and pushed.
-pause
+timeout /t 5 /nobreak >nul
