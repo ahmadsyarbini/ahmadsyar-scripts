@@ -22,7 +22,6 @@ if errorlevel 1 (
 
 :: --- Step 3: Extract ZIP using PowerShell ---
 echo Extracting repository...
-rem powershell -NoProfile -Command "Expand-Archive -Path '%ZIP_FILE%' -DestinationPath '%EXTRACT_FOLDER%' -Force"
 tar -xf "%ZIP_FILE%" -C "%EXTRACT_FOLDER%"
 if errorlevel 1 (
     echo Failed to extract repository.

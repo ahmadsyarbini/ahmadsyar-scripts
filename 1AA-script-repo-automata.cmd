@@ -21,14 +21,6 @@ rem remote pc condition with internet exist, mirror github repo to local
 if exist "%localfolder%" (
     call "2AA-has-internet-deployment" 
 )
-rem remote pc with no internet, mirror pendrive to remote pc
-rem ping -n 1 8.8.8.8 >nul
-rem if %errorlevel%==0 (
-rem     echo yes internet
-rem ) else (
-rem     echo no internet. mirroring from pendrive to remote pc
-rem     robocopy "%pdrive_no_internet%" "%localfolder%" "*" /MIR /DCOPY:D /COPY:D /IS /IT /W:1 /R:1 /NDL /NJH /NJS /NS /XD ".git"
-rem )
 
 rem push to github, if on local source
 if exist "%SourceWinScript%" (
