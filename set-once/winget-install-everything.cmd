@@ -77,6 +77,7 @@ winget install --id=ViRb3.wgcf -e -h --source winget
 winget install --id=VRCX.VRCX -e -h --source winget
 winget install --id=WireGuard.WireGuard -e -h --source winget
 winget install --id=XMediaRecode.XMediaRecode -e -h --source winget
+call "patcher-sublime-4200.cmd"
 rem For pinning
 winget pin add BlenderFoundation.Blender
 winget pin add Discord.Discord
@@ -115,6 +116,7 @@ winget install --id=REALiX.HWiNFO -e -h --source winget
 winget install --id=SublimeHQ.SublimeText.4 -e -h --source winget
 winget install --id=Universal-Debloater-Alliance.uad-ng -e -h --source winget
 winget install --id=WireGuard.WireGuard -e -h --source winget
+call "patcher-sublime-4200.cmd"
 pause
 goto end
 
@@ -132,6 +134,7 @@ winget install --id=Microsoft.WindowsTerminal -e -h --source winget
 winget install --id=REALiX.HWiNFO -e -h --source winget
 winget install --id=SublimeHQ.SublimeText.4 -e -h --source winget
 winget install --id=Valve.SteamCMD -e -h --source winget
+call "patcher-sublime-4200.cmd"
 pause
 goto end
 
@@ -171,6 +174,7 @@ echo installing windows 10 set
 winget install --id=7zip.7zip -e -h --source winget
 winget install --id=Microsoft.WindowsTerminal -e -h --source winget
 winget install --id=SublimeHQ.SublimeText.4 -e -h --source winget
+call "patcher-sublime-4200.cmd"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v ProductVersion /t REG_SZ /d "Windows 10" /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleaseVersion /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleaseVersionInfo /t REG_SZ /d "22H2" /f
