@@ -6,7 +6,6 @@ set "SourceWinScript=%userprofile%\My Drive\Documents\Tech"
 rem targets
 set "targetpdrive=F:\Tech"
 set "localfolder=%userprofile%\asr-scripts\Tech"
-rem set "pdrive_no_internet=%~dp0."
 
 rem mirror to targets
 rem local source condition, mirror from source to pendrive

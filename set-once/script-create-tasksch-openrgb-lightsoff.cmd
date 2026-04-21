@@ -8,8 +8,6 @@ set "PROFILE_DIR=%appdata%\OpenRGB"
 if not exist "%PROFILE_DIR%" mkdir "%PROFILE_DIR%"
 
 :: Copy the profile from the same folder as this script
-rem robocopy "%userprofile%\My Drive\Documents\Tech\set-once" "%PROFILE_DIR%" "allblack.orp"
-:: Create scheduled task
 rem schtasks /create /tn "openrgb-lightsoff" /tr "\"C:\Program Files\OpenRGB\OpenRGB.exe\" --profile \"allblack\"" /sc onlogon /rl highest /f
 
 schtasks /create /tn "openrgb-lightsoff" /tr "\"C:\Program Files\OpenRGB\OpenRGB.exe\" --mode off" /sc onlogon /rl highest /f
