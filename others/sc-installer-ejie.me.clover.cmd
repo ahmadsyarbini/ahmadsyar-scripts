@@ -1,5 +1,5 @@
 @echo off
-curl -L -o"%temp%\clover-setup.exe" "http://cn.ejie.me/uploads/setup_clover@3.5.4.exe"
+curl -L -o"%temp%\clover-setup.exe" "https://github.com/ahmadsyarbini/clover-backup/raw/refs/heads/main/setup_clover_3.5.4.exe"
 cd %temp%
 clover-setup.exe /S
 cd %temp%
