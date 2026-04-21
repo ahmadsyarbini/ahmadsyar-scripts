@@ -174,6 +174,7 @@ echo installing windows 10 set
 winget install --id=7zip.7zip -e -h --source winget
 winget install --id=Microsoft.WindowsTerminal -e -h --source winget
 winget install --id=SublimeHQ.SublimeText.4 -e -h --source winget
+cd "%~dp0."
 call "patcher-sublime-4200.cmd"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v ProductVersion /t REG_SZ /d "Windows 10" /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleaseVersion /t REG_DWORD /d 1 /f
