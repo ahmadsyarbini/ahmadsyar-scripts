@@ -4,6 +4,7 @@ net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exi
 :: End of admin elevator
 Title NVME Driver switch
 echo NVME driver switch beta
+rem update April 2026 no longer works with the latest windows 11 25h2
 echo Press [1] to enable experimental nvme driver
 echo Press [2] to disable experimental nvme driver
 echo Press [3] to do nothing
