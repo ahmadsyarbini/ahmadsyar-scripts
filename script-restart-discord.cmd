@@ -11,6 +11,9 @@ if exist "%APPDATA%\discord" (
     echo Clearing cache folders...
     rd /s /q "Cache"
     rd /s /q "Code Cache"
+    rd /s /q "component_crx_cache"
+    rd /s /q "DawnGraphiteCache"
+    rd /s /q "DawnWebGPUCache"
     rd /s /q "GPUCache"
     echo Restarting Discord...
     start "" "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
