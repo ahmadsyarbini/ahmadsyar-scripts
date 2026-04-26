@@ -1,12 +1,7 @@
 @echo off
-
-:: Check for admin privileges
-net session >nul 2>&1
-if %errorLevel% neq 0 (
-    echo Requesting admin privileges...
-    powershell -Command "Start-Process '%~f0' -Verb RunAs"
-    exit /b
-)
+:: Admin priv elevator
+net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
+:: End of admin elevator
 
 :: Query Malaysia Standard Time and update system clock
 echo Querying Malaysia local time (GMT+8)...
