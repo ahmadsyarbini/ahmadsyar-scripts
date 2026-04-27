@@ -11,7 +11,7 @@ rem Clean temp
 if exist "%EXTRACT_FOLDER%" rmdir /s /q "%EXTRACT_FOLDER%"
 mkdir "%EXTRACT_FOLDER%"
 
-rem --- Download the ZIP ---
+rem Download the ZIP
 echo Downloading repository...
 curl -L "%REPO_URL%" -o "%ZIP_FILE%"
 if errorlevel 1 (
@@ -19,7 +19,7 @@ if errorlevel 1 (
     exit /b 1
 )
 
-rem --- Extract ZIP using Tar ---
+rem Extract ZIP using Tar
 echo Extracting repository...
 tar -xf "%ZIP_FILE%" -C "%EXTRACT_FOLDER%"
 if errorlevel 1 (
@@ -27,10 +27,10 @@ if errorlevel 1 (
     exit /b 1
 )
 
-rem --- Change directory into temp extract folder ---
+rem Change directory into temp extract folder
 cd /d "%EXTRACT_FOLDER%\ahmadsyar-scripts-main"
 
-rem --- Robocopy to destination ---
+rem Robocopy to destination
 echo Copying files to destination...
 if not exist "%DEST_FOLDER%" mkdir "%DEST_FOLDER%"
 robocopy "%EXTRACT_FOLDER%\ahmadsyar-scripts-main" "%DEST_FOLDER%" /mir /xf "*.zip" /njh /njs /ndl /copy:d /dcopy:d
@@ -38,7 +38,7 @@ robocopy "%EXTRACT_FOLDER%\ahmadsyar-scripts-main" "%DEST_FOLDER%" /mir /xf "*.z
 rem Cleanup
 cd /d "%DEST_FOLDER%"
 rmdir /s /q "%EXTRACT_FOLDER%"
-del "%ZIP_FILE%"
+del /q "%ZIP_FILE%"
 
 rem creating local-local-tech folder for shortcut
 rem set Variables

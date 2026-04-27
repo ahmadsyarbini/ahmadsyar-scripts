@@ -11,7 +11,7 @@ if exist "%SourceWinScript%" (
 	exit
 )
 
-rem condition = No internet, no local-tech folder, no my drive tech, has 1AA-reposync
+rem condition No internet, no local-tech folder, no my drive tech, has 1AA-reposync
 if not exist "%local-tech%" (
 	if not exist "%SourceWinScript%" (
 		if exist "1AA-script-repo-automata.cmd" (
