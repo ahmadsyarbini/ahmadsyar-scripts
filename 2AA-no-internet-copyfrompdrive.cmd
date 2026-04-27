@@ -11,7 +11,7 @@ if exist "%SourceWinScript%" (
 	exit
 )
 
-::condition = No internet, no local-tech folder, no my drive tech, has 1AA-reposync
+rem condition = No internet, no local-tech folder, no my drive tech, has 1AA-reposync
 if not exist "%local-tech%" (
 	if not exist "%SourceWinScript%" (
 		if exist "1AA-script-repo-automata.cmd" (
@@ -24,13 +24,13 @@ if not exist "%local-tech%" (
 	)
 )
 
-::creating local-local-tech folder for shortcut
-:: set Variables
+rem creating local-local-tech folder for shortcut
+rem set Variables
 set "TargetExe=C:\Windows\System32\cmd.exe"
 set "TargetPath=%userprofile%\asr-scripts\Tech\script-everything-off.cmd"
 set "TargetArgs=/c \"%TargetPath%\""
 set "ShortcutPath=%local-local-tech%\script-everything-off.lnk"
-:: Create shortcut
+rem Create shortcut
 if not exist "%local-local-tech%" mkdir "%local-local-tech%"
 powershell -NoProfile -Command ^
 $WshShell = New-Object -ComObject WScript.Shell; ^
