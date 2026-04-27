@@ -1,8 +1,8 @@
 @echo off
 setlocal
-:: Admin priv elevator
+rem Admin priv elevator
 net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
-:: End of admin elevator
+rem End of admin elevator
 
 set "REPO=rustdesk/rustdesk"
 set "OUT=%USERPROFILE%\Downloads\rustdesk-%RANDOM%.exe"
