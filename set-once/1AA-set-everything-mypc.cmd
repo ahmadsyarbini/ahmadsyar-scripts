@@ -13,7 +13,7 @@ reg import "reg-sound-scheme-my-win11.reg"
 rem Run batch scripts
 rem ahk part
 call "script-create-ahk-shortcut.cmd"
-call "script-sharpkey-remap.cmd"
+call "script-create-sharpkey-remap.cmd"
 rem openrgb part
 call "script-create-tasksch-openrgb-lightsoff.cmd"
 rem winget autoupdate part
