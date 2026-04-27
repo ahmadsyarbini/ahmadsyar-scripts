@@ -3,5 +3,6 @@ curl -L -o"%temp%\clover-setup.exe" "https://github.com/ahmadsyarbini/clover-bac
 cd %temp%
 clover-setup.exe /S
 cd %temp%
+if exist "%temp%\clover-setup.exe" del /q "%temp%\clover-setup.exe"
 timeout /t 5 /nobreak >nul
 taskkill /IM "clover-setup.exe" /T /F
