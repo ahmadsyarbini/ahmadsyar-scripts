@@ -1,18 +1,18 @@
 @echo off
 setlocal
-:: Admin priv elevator
+rem  Admin priv elevator
 net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
-:: End of admin elevator
+rem  End of admin elevator
 
-:: Temp workspace
+rem Temp workspace
 set "WORKDIR=%TEMP%\OfficeSetup"
 set "CONFIG_FILE=%WORKDIR%\configuration.xml"
 set "SETUP_EXE=%WORKDIR%\setup.exe"
 
-:: Create working directory
-md "%WORKDIR%" 2>nul
+rem Create working directory
+if not exist "%WORKDIR%" md "%WORKDIR%"
 
-:: Generate configuration.xml
+rem Generate configuration.xml
 > "%CONFIG_FILE%" (
   echo ^<Configuration^>
   echo   ^<Add OfficeClientEdition="64" Channel="Current"^>
@@ -37,11 +37,12 @@ md "%WORKDIR%" 2>nul
   echo ^</Configuration^>
 )
 
-:: Download setup.exe directly from Microsoft CDN
-powershell -Command ^
-"Invoke-WebRequest -Uri 'https://officecdn.microsoft.com/pr/wsus/setup.exe' -OutFile '%WORKDIR%\setup.exe'"
+rem Download setup.exe directly from Microsoft CDN
+rem powershell -Command ^
+rem "Invoke-WebRequest -Uri 'https://officecdn.microsoft.com/pr/wsus/setup.exe' -OutFile '%WORKDIR%\setup.exe'"
+curl -L "https://officecdn.microsoft.com/pr/wsus/setup.exe" -o "%WORKDIR%\setup.exe"
 
-:: Run installer with visual progress
+rem Run installer with visual progress
 if exist "%SETUP_EXE%" (
   echo Launching Office 365 installer
   "%SETUP_EXE%" /configure "%CONFIG_FILE%"
@@ -49,14 +50,14 @@ if exist "%SETUP_EXE%" (
   echo Error: setup.exe not found. Download may have failed.
 )
 
-:: Cleanup
+rem Cleanup
 cd /d %temp%
 rd /s /q "%WORKDIR%"
 
-::pin that office to prevent winget trigger
+rem pin that office to prevent winget trigger
 winget pin add Microsoft.Office --accept-source-agreements
 
-::activation
+rem activation
 echo activating office using ohook method
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& ([ScriptBlock]::Create((irm https://get.activated.win))) /Ohook"
 
