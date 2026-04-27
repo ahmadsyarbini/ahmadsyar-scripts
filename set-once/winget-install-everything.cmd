@@ -180,7 +180,7 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v ProductVersi
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleaseVersion /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleaseVersionInfo /t REG_SZ /d "22H2" /f
 echo installing clover
-cd "%~dp0"
+cd "%~dp0."
 call "%~dp0..\others\sc-installer-ejie.me.clover.cmd"
 timeout /t 5 /nobreak >nul
 call "%~dp0..\others\firewall-add-clover-ejieme.cmd"

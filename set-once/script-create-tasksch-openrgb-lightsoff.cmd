@@ -10,6 +10,8 @@ if not exist "%PROFILE_DIR%" mkdir "%PROFILE_DIR%"
 :: Copy the profile from the same folder as this script
 rem schtasks /create /tn "openrgb-lightsoff" /tr "\"C:\Program Files\OpenRGB\OpenRGB.exe\" --profile \"allblack\"" /sc onlogon /rl highest /f
 
+rem info check with openrgb cli what kind of mode does your rgb device have
+
 schtasks /create /tn "openrgb-lightsoff" /tr "\"C:\Program Files\OpenRGB\OpenRGB.exe\" --mode off" /sc onlogon /rl highest /f
 
 echo Scheduled task "openrgb-lightsoff" created successfully.
