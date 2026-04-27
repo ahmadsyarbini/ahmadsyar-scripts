@@ -1,7 +1,7 @@
 @echo off
-:: Admin priv elevator
+rem Admin priv elevator
 net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
-:: End of admin elevator
+rem End of admin elevator
 Title "Hotspot TTL switcher"
 echo Press [1] to turn on TTL to 65
 echo Press [2] to set to default windows

@@ -1,7 +1,7 @@
 @echo off
-:: Admin priv elevator
+rem Admin priv elevator
 net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
-:: End of admin elevator
+rem End of admin elevator
 netsh advfirewall firewall delete rule name="Block Photoshop Outbound" dir=out
 netsh advfirewall firewall delete rule name="Block Photoshop Inbound" dir=in
 netsh advfirewall firewall delete rule name="Block Premiere Pro Outbound" dir=out

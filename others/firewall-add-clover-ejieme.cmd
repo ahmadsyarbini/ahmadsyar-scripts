@@ -1,8 +1,8 @@
 @echo off
-:: Admin priv elevator
+rem Admin priv elevator
 net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
-:: End of admin elevator
-::safely deletes duplicate if any
+rem End of admin elevator
+rem safely deletes duplicate if any
 netsh advfirewall firewall delete rule name="Block Clover.exe Inbound" dir=in
 netsh advfirewall firewall delete rule name="Block Clover.exe Outbound" dir=out
 netsh advfirewall firewall delete rule name="Block CloverAss.exe Inbound" dir=in
@@ -19,7 +19,7 @@ netsh advfirewall firewall delete rule name="Block Uninst.exe Inbound" dir=in
 netsh advfirewall firewall delete rule name="Block Uninst.exe Outbound" dir=out
 netsh advfirewall firewall delete rule name="Block UserPage.exe Inbound" dir=in
 netsh advfirewall firewall delete rule name="Block UserPage.exe Outbound" dir=out
-::Add back
+rem Add back
 netsh advfirewall firewall add rule name="Block Clover.exe Inbound" dir=in action=block program="C:\Program Files (x86)\Clover\Clover.exe" enable=yes
 netsh advfirewall firewall add rule name="Block Clover.exe Outbound" dir=out action=block program="C:\Program Files (x86)\Clover\Clover.exe" enable=yes
 netsh advfirewall firewall add rule name="Block CloverAss.exe Inbound" dir=in action=block program="C:\Program Files (x86)\Clover\CloverAss.exe" enable=yes
@@ -37,7 +37,7 @@ netsh advfirewall firewall add rule name="Block Uninst.exe Outbound" dir=out act
 netsh advfirewall firewall add rule name="Block UserPage.exe Inbound" dir=in action=block program="C:\Program Files (x86)\Clover\UserPage.exe" enable=yes
 netsh advfirewall firewall add rule name="Block UserPage.exe Outbound" dir=out action=block program="C:\Program Files (x86)\Clover\UserPage.exe" enable=yes
 
-::excess files renamer
+rem excess files renamer
 
 echo exiting explorer and clover for safety...
 taskkill /f /im explorer.exe >nul 2>&1
