@@ -18,7 +18,7 @@ if exist "%SourceWinScript%" (
 )
 rem remote pc condition with internet exist, mirror github repo to local
 if exist "%localfolder%" (
-    call "2AA-has-internet-deployment" 
+    call "2AA-has-internet-deployment.cmd" 
 )
 
 rem push to github, if on local source
