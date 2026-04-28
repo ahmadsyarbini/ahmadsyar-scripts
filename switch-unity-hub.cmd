@@ -13,12 +13,14 @@ if errorlevel == 1 goto turnon
 :turnoff
 cd "%programfiles%\Unity hub"
 ren "Unity Hub.exe" "Unity Hub.exe.bak"
+echo Unity Hub renamed to backup
 TIMEOUT /T 3 /nobreak >nul
 goto end
 
 :turnon
 cd "%programfiles%\Unity hub"
 ren "Unity Hub.exe.bak" "Unity Hub.exe"
+echo Unity Hub renamed back to normal
 TIMEOUT /T 3 /nobreak >nul
 goto end
 :end

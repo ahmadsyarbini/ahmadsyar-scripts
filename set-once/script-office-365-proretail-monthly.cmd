@@ -10,7 +10,7 @@ set "CONFIG_FILE=%WORKDIR%\configuration.xml"
 set "SETUP_EXE=%WORKDIR%\setup.exe"
 
 rem Create working directory
-md "%WORKDIR%" 2>nul
+if not exist "%WORKDIR%" md "%WORKDIR%"
 
 rem Generate configuration.xml
 > "%CONFIG_FILE%" (
