@@ -1,16 +1,16 @@
 @echo off
-:: Admin priv elevator
+rem Admin priv elevator
 net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
-:: End of admin elevator
+rem End of admin elevator
 setlocal enableextensions
 
 set "xmlDir=%temp%\xml"
 set "xmlFile=%xmlDir%\winget-update.xml"
 
-:: Create temp folder
+rem Create temp folder
 md "%xmlDir%" 2>nul
 
-:: Write a minimal, GUI-safe task definition (escape every < and >)
+rem the xml part
 > "%xmlFile%" (
   echo ^<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task"^>
   echo   ^<Triggers^>
@@ -37,15 +37,15 @@ md "%xmlDir%" 2>nul
   echo ^</Task^>
 )
 
-:: Import the task
+rem Import the task
 schtasks /create /tn "winget-update" /xml "%xmlFile%" /f
 set "rc=%errorlevel%"
 
-:: Cleanup
+rem Cleanup
 cd /d %temp%
 rd /s /q "%xmlDir%" 2>nul
 
-::residue of previous coding
+rem residue of previous coding
 rem schtasks /create /tn "winget-update" /tr "cmd.exe /c winget upgrade --all --silent" /sc daily /st 06:00 /rl highest /f
 
 echo Scheduled task "winget-update" created successfully.
