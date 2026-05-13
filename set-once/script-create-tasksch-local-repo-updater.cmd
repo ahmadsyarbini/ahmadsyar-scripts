@@ -28,7 +28,7 @@ md "%xmlDir%" 2>nul
   echo   ^</Settings^>
   echo   ^<Actions Context="Author"^>
   echo     ^<Exec^>
-  echo       ^<Command^>%%userprofile%%\amr-scripts\Tech\1AA-script-repo-automata.cmd^</Command^>
+  echo       ^<Command^>%%userprofile%%\amr-scripts\Tech\2AA-has-internet-deployment.cmd^</Command^>
   echo     ^</Exec^>
   echo   ^</Actions^>
   echo ^</Task^>
