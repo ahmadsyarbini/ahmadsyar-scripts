@@ -22,6 +22,8 @@ powercfg -setactive 381b4222-f694-41f0-9685-ff5bb260df2e
 ipconfig -flushdns
 start "" "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\f.lux.lnk" -noshow
 start "" "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\MSI Afterburner\MSI Afterburner.lnk" -s
+rem start steam again with non-admin, normal user start
+powershell -Command "$s=New-Object -ComObject Shell.Application; $s.ShellExecute('C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Steam\Steam.lnk','','','open',1)"
 goto end
 
 :turnon
