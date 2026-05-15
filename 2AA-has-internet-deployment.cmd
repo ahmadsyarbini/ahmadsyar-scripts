@@ -1,11 +1,19 @@
 @echo off
 setlocal EnableDelayedExpansion
+set "SourceWinScript=%userprofile%\My Drive\Documents\Tech"
 set "REPO_URL=https://github.com/ahmadsyarbini/ahmadsyar-scripts/archive/refs/heads/main.zip"
 set "ZIP_FILE=%TEMP%\repo.zip"
 set "EXTRACT_FOLDER=%TEMP%\repo-extract"
 set "DEST_FOLDER=%USERPROFILE%\amr-scripts\Tech"
 rem for creating localtech folder
 set "local-local-tech=%userprofile%\amr-scripts\Local-Tech"
+
+rem safety check
+if exist "%SourceWinScript%" (
+    echo this script is invalid for this pc
+    timeout /t 3 /nobreak >nul
+    exit
+)
 
 rem Clean temp
 if exist "%EXTRACT_FOLDER%" rmdir /s /q "%EXTRACT_FOLDER%"
