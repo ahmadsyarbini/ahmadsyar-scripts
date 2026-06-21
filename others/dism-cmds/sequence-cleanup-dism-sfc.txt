@@ -1,0 +1,3 @@
+sequence-cleanup-dism-sfc
+
+do the `sfc /scannow`
