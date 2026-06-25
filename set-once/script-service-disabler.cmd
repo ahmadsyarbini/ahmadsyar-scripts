@@ -8,3 +8,5 @@ rem End of admin elevator
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\CDPSvc" /v Start /t REG_DWORD /d 4 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\CDPUserSvc" /v Start /t REG_DWORD /d 4 /f
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\CDPUserSvc" /v UserServiceFlags /t REG_DWORD /d 0 /f
+echo done
+timeout /t 3 /nobreak >nul
