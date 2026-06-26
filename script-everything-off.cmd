@@ -3,7 +3,6 @@ del "%userprofile%\Desktop\*.lnk" /f /q
 del "C:\Users\Public\Desktop\*.lnk" /f /q
 net stop "AdobeARMservice"
 net stop "CDPSvc"
-net stop "CDPUserSvc_5a7c3"
 net stop "ClickToRunSvc"
 net stop "DiagTrack"
 net stop "EABackgroundService"
@@ -26,9 +25,8 @@ netsh interface set interface "VMware Network Adapter VMnet1" admin=disable
 netsh interface set interface "VMware Network Adapter VMnet8" admin=disable
 sc config "AdobeARMservice" start= disabled
 sc config "CDPSvc" start= disabled
-sc config "CDPUserSvc_5a7c3" start= demand
 sc config "ClickToRunSvc" start= demand
-sc config "DiagTrack" start= demand
+sc config "DiagTrack" start= disabled
 sc config "EABackgroundService" start= demand
 sc config "PhoneSvc" start= disabled
 sc config "SamsungMagicianSVC" start= demand
