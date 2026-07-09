@@ -27,7 +27,7 @@ soundvolumeview /Enable "NVIDIA High Definition Audio\Device\LG HDR WFHD\Render"
 rem timeout to give it chance
 timeout /t 1 /nobreak >nul
 soundvolumeview /SetDefault "NVIDIA High Definition Audio\Device\LG HDR WFHD\Render" all
-soundvolumeview /SetVolume "NVIDIA High Definition Audio\Device\LG HDR WFHD\Render" 80
+soundvolumeview /SetVolume "NVIDIA High Definition Audio\Device\LG HDR WFHD\Render" 40
 goto end
 :end
 exit
