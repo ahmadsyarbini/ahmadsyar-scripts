@@ -10,12 +10,14 @@ Title "MTU Changer"
 echo MTU Changer
 echo Press [1] to set to 1500 (default)
 echo Press [2] to set to 1455 (lowest DF set)
+echo Press [3] to set to do nothing
 
 echo Current wifi and ethernet names are : %wifi-name% and %ethernet-name%
 
-choice /c 12 /D:1 /T:60 /m "Enter your choice: "
+choice /c 123 /D:3 /T:60 /m "Enter your choice: "
 if %errorlevel% == 1 goto default
 if %errorlevel% == 2 goto mtu1455
+if %errorlevel% == 3 goto end
 
 :default
 rem set to dhcp
