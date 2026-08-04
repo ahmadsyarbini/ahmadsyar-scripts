@@ -1,6 +1,6 @@
 ### Usage
 
-Clone repo
+`git clone https://github.com/ahmadsyarbini/ahmadsyar-scripts.git`
 
 or
 
