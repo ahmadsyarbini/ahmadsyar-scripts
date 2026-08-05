@@ -64,5 +64,6 @@ taskkill /IM "nvcontainer.exe" /T /F
 taskkill /IM "NVIDIA App.exe" /T /F
 taskkill /IM "smartscreen.exe" /T /F
 taskkill /IM "TabTip.exe" /T /F
+taskkill /IM "WebDriver.exe" /T /F
 timeout /t 1 /nobreak >nul
 rem pause
