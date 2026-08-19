@@ -61,7 +61,6 @@ winget install -e -h --source=winget --id=NirSoft.SoundVolumeView
 winget install -e -h --source=winget --id=OBSProject.OBSStudio
 winget install -e -h --source=winget --id=OpenRGB.OpenRGB
 winget install -e -h --source=winget --id=PowerSoftware.AnyBurn
-winget install -e -h --source=winget --id=qBittorrent.qBittorrent
 winget install -e -h --source=winget --id=Rclone.Rclone
 winget install -e -h --source=winget --id=REALiX.HWiNFO
 winget install -e -h --source=winget --id=RubyInstallerTeam.RubyWithDevKit.3.4
