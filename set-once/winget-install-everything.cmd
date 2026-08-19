@@ -23,60 +23,60 @@ if %errorlevel% == 7 goto nothing
 :mypc
 rem mypc set
 echo installing mypc set
-winget install --id=64Gram.64Gram -e -h --source=winget
-winget install --id=7zip.7zip -e -h --source=winget
-winget install --id=9NKSQGP7F2NH -e -h --source=msstore & rem whatsapp from msstore
-winget install --id=abbodi1406.vcredist -e -h --source=winget
-winget install --id=anatawa12.ALCOM -e -h --source=winget
-winget install --id=AnInsomniacy.MotrixNext -e -h --source=winget
-winget install --id=AntibodySoftware.WizTree -e -h --source=winget
-winget install --id=AntSoftware.AntRenamer -e -h --source=winget
-winget install --id=Audacity.Audacity -e -h --source=winget
-winget install --id=AutoHotkey.AutoHotkey -e -h --source=winget
-winget install --id=ch.LosslessCut -e -h --source=winget
-winget install --id=CodecGuide.K-LiteCodecPack.Mega -e -h --source=winget
-winget install --id=CPUID.CPU-Z -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskInfo -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskMark -e -h --source=winget
-winget install --id=dev47apps.DroidCamOBSPlugin -e -h --source=winget
-winget install --id=Discord.Discord -e -h --source=winget
-winget install --id=EpicGames.EpicGamesLauncher -e -h --source=winget
-winget install --id=FlorianHeidenreich.Mp3tag -e -h --source=winget
-winget install --id=flux.flux -e -h --source=winget
-winget install --id=FrancisBanyikwa.MediaDownloader -e -h --source=winget
-winget install --id=Git.Git -e -h --source=winget
-winget install --id=Google.Chrome -e -h --source=winget
-winget install --id=Google.GoogleDrive -e -h --source=winget
-winget install --id=Google.PlatformTools -e -h --source=winget
-winget install --id=Guru3D.Afterburner -e -h --source=winget
-winget install --id=Guru3D.RTSS -e -h --source=winget
-winget install --id=Gyan.FFmpeg.Essentials -e -h --source=winget
-winget install --id=Klocman.BulkCrapUninstaller -e -h --source=winget
-winget install --id=Microsoft.Sysinternals.Autologon -e -h --source=winget
-winget install --id=Microsoft.WindowsTerminal -e -h --source=winget
-winget install --id=Mono.Mono -e -h --source=winget
-winget install --id=Mozilla.Firefox -e -h --source=winget
-winget install --id=namazso.PawnIO -e -h --source=winget
-winget install --id=NirSoft.SoundVolumeView -e -h --source=winget
-winget install --id=OBSProject.OBSStudio -e -h --source=winget
-winget install --id=OpenRGB.OpenRGB -e -h --source=winget
-winget install --id=PowerSoftware.AnyBurn -e -h --source=winget
-winget install --id=qBittorrent.qBittorrent -e -h --source=winget
-winget install --id=Rclone.Rclone -e -h --source=winget
-winget install --id=REALiX.HWiNFO -e -h --source=winget
-winget install --id=RubyInstallerTeam.RubyWithDevKit.3.4 -e -h --source=winget
-winget install --id=Rufus.Rufus -e -h --source=winget
-winget install --id=SublimeHQ.SublimeText.4 -e -h --source=winget
-winget install --id=TechPowerUp.GPU-Z -e -h --source=winget
-winget install --id=TechPowerUp.NVCleanstall -e -h --source=winget
-winget install --id=Unity.UnityHub -e -h --source=winget
-winget install --id=Universal-Debloater-Alliance.uad-ng -e -h --source=winget
-winget install --id=Valve.Steam -e -h --source=winget
-winget install --id=Ventoy.Ventoy -e -h --source=winget
-winget install --id=ViRb3.wgcf -e -h --source=winget
-winget install --id=VRCX.VRCX -e -h --source=winget
-winget install --id=WireGuard.WireGuard -e -h --source=winget
-winget install --id=XMediaRecode.XMediaRecode -e -h --source=winget
+winget install -e -h --source=msstore --id=9NKSQGP7F2NH & rem whatsapp msoft store
+winget install -e -h --source=winget --id=64Gram.64Gram
+winget install -e -h --source=winget --id=7zip.7zip
+winget install -e -h --source=winget --id=abbodi1406.vcredist
+winget install -e -h --source=winget --id=anatawa12.ALCOM
+winget install -e -h --source=winget --id=AnInsomniacy.MotrixNext
+winget install -e -h --source=winget --id=AntibodySoftware.WizTree
+winget install -e -h --source=winget --id=AntSoftware.AntRenamer
+winget install -e -h --source=winget --id=Audacity.Audacity
+winget install -e -h --source=winget --id=AutoHotkey.AutoHotkey
+winget install -e -h --source=winget --id=ch.LosslessCut
+winget install -e -h --source=winget --id=CodecGuide.K-LiteCodecPack.Mega
+winget install -e -h --source=winget --id=CPUID.CPU-Z
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskInfo
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskMark
+winget install -e -h --source=winget --id=dev47apps.DroidCamOBSPlugin
+winget install -e -h --source=winget --id=Discord.Discord
+winget install -e -h --source=winget --id=EpicGames.EpicGamesLauncher
+winget install -e -h --source=winget --id=FlorianHeidenreich.Mp3tag
+winget install -e -h --source=winget --id=flux.flux
+winget install -e -h --source=winget --id=FrancisBanyikwa.MediaDownloader
+winget install -e -h --source=winget --id=Git.Git
+winget install -e -h --source=winget --id=Google.Chrome
+winget install -e -h --source=winget --id=Google.GoogleDrive
+winget install -e -h --source=winget --id=Google.PlatformTools
+winget install -e -h --source=winget --id=Guru3D.Afterburner
+winget install -e -h --source=winget --id=Guru3D.RTSS
+winget install -e -h --source=winget --id=Gyan.FFmpeg.Essentials
+winget install -e -h --source=winget --id=Klocman.BulkCrapUninstaller
+winget install -e -h --source=winget --id=Microsoft.Sysinternals.Autologon
+winget install -e -h --source=winget --id=Microsoft.WindowsTerminal
+winget install -e -h --source=winget --id=Mono.Mono
+winget install -e -h --source=winget --id=Mozilla.Firefox
+winget install -e -h --source=winget --id=namazso.PawnIO
+winget install -e -h --source=winget --id=NirSoft.SoundVolumeView
+winget install -e -h --source=winget --id=OBSProject.OBSStudio
+winget install -e -h --source=winget --id=OpenRGB.OpenRGB
+winget install -e -h --source=winget --id=PowerSoftware.AnyBurn
+winget install -e -h --source=winget --id=qBittorrent.qBittorrent
+winget install -e -h --source=winget --id=Rclone.Rclone
+winget install -e -h --source=winget --id=REALiX.HWiNFO
+winget install -e -h --source=winget --id=RubyInstallerTeam.RubyWithDevKit.3.4
+winget install -e -h --source=winget --id=Rufus.Rufus
+winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
+winget install -e -h --source=winget --id=TechPowerUp.GPU-Z
+winget install -e -h --source=winget --id=TechPowerUp.NVCleanstall
+winget install -e -h --source=winget --id=Unity.UnityHub
+winget install -e -h --source=winget --id=Universal-Debloater-Alliance.uad-ng
+winget install -e -h --source=winget --id=Valve.Steam
+winget install -e -h --source=winget --id=Ventoy.Ventoy
+winget install -e -h --source=winget --id=ViRb3.wgcf
+winget install -e -h --source=winget --id=VRCX.VRCX
+winget install -e -h --source=winget --id=WireGuard.WireGuard
+winget install -e -h --source=winget --id=XMediaRecode.XMediaRecode
 call "patcher-sublime-4200.cmd"
 rem For pinning
 winget pin add BlenderFoundation.Blender
@@ -94,29 +94,29 @@ goto end
 :mylaptop
 rem mylaptop set
 echo installing mylaptop set
-winget install --id=64Gram.64Gram -e -h --source=winget
-winget install --id=7zip.7zip -e -h --source=winget
-winget install --id=9NKSQGP7F2NH -e -h --source=msstore & rem whatsapp ms store
-winget install --id=abbodi1406.vcredist -e -h --source=winget
-winget install --id=AnInsomniacy.MotrixNext -e -h --source=winget
-winget install --id=AntibodySoftware.WizTree -e -h --source=winget
-winget install --id=AntSoftware.AntRenamer -e -h --source=winget
-winget install --id=CodecGuide.K-LiteCodecPack.Mega -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskInfo -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskMark -e -h --source=winget
-winget install --id=Discord.Discord -e -h --source=winget
-winget install --id=flux.flux -e -h --source=winget
-winget install --id=Google.Chrome -e -h --source=winget
-winget install --id=Google.GoogleDrive -e -h --source=winget
-winget install --id=Google.PlatformTools -e -h --source=winget
-winget install --id=Klocman.BulkCrapUninstaller -e -h --source=winget
-winget install --id=Microsoft.Sysinternals.Autologon -e -h --source=winget
-winget install --id=Microsoft.WindowsTerminal -e -h --source=winget
-winget install --id=Mozilla.Firefox -e -h --source=winget
-winget install --id=REALiX.HWiNFO -e -h --source=winget
-winget install --id=SublimeHQ.SublimeText.4 -e -h --source=winget
-winget install --id=Universal-Debloater-Alliance.uad-ng -e -h --source=winget
-winget install --id=WireGuard.WireGuard -e -h --source=winget
+winget install -e -h --source=msstore --id=9NKSQGP7F2NH & rem whatsapp ms store
+winget install -e -h --source=winget --id=64Gram.64Gram
+winget install -e -h --source=winget --id=7zip.7zip
+winget install -e -h --source=winget --id=abbodi1406.vcredist
+winget install -e -h --source=winget --id=AnInsomniacy.MotrixNext
+winget install -e -h --source=winget --id=AntibodySoftware.WizTree
+winget install -e -h --source=winget --id=AntSoftware.AntRenamer
+winget install -e -h --source=winget --id=CodecGuide.K-LiteCodecPack.Mega
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskInfo
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskMark
+winget install -e -h --source=winget --id=Discord.Discord
+winget install -e -h --source=winget --id=flux.flux
+winget install -e -h --source=winget --id=Google.Chrome
+winget install -e -h --source=winget --id=Google.GoogleDrive
+winget install -e -h --source=winget --id=Google.PlatformTools
+winget install -e -h --source=winget --id=Klocman.BulkCrapUninstaller
+winget install -e -h --source=winget --id=Microsoft.Sysinternals.Autologon
+winget install -e -h --source=winget --id=Microsoft.WindowsTerminal
+winget install -e -h --source=winget --id=Mozilla.Firefox
+winget install -e -h --source=winget --id=REALiX.HWiNFO
+winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
+winget install -e -h --source=winget --id=Universal-Debloater-Alliance.uad-ng
+winget install -e -h --source=winget --id=WireGuard.WireGuard
 call "patcher-sublime-4200.cmd"
 pause
 goto end
@@ -124,17 +124,16 @@ goto end
 :myserver
 rem myserver set
 echo installing myserver set
-winget install --id=7zip.7zip -e -h --source=winget
-winget install --id=abbodi1406.vcredist -e -h --source=winget
-winget install --id=AntibodySoftware.WizTree -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskInfo -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskMark -e -h --source=winget
-winget install --id=DevelopedMethods.playit -e -h --source=winget
-winget install --id=Microsoft.DirectX -e -h --source=winget
-winget install --id=Microsoft.WindowsTerminal -e -h --source=winget
-winget install --id=REALiX.HWiNFO -e -h --source=winget
-winget install --id=SublimeHQ.SublimeText.4 -e -h --source=winget
-winget install --id=Valve.SteamCMD -e -h --source=winget
+winget install -e -h --source=winget --id=7zip.7zip
+winget install -e -h --source=winget --id=abbodi1406.vcredist
+winget install -e -h --source=winget --id=AntibodySoftware.WizTree
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskInfo
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskMark
+winget install -e -h --source=winget --id=Microsoft.DirectX
+winget install -e -h --source=winget --id=Microsoft.WindowsTerminal
+winget install -e -h --source=winget --id=REALiX.HWiNFO
+winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
+winget install -e -h --source=winget --id=Valve.SteamCMD
 call "patcher-sublime-4200.cmd"
 pause
 goto end
@@ -142,29 +141,29 @@ goto end
 :stduser
 rem for standard user
 echo installing standard set
-winget install --id=7zip.7zip -e -h --source=winget
-winget install --id=abbodi1406.vcredist -e -h --source=winget
-winget install --id=AntibodySoftware.WizTree -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskInfo -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskMark -e -h --source=winget
-winget install --id=Klocman.BulkCrapUninstaller -e -h --source=winget
-winget install --id=Microsoft.DirectX -e -h --source=winget
-winget install --id=REALiX.HWiNFO -e -h --source=winget
-winget install --id=SublimeHQ.SublimeText.4 -e -h --source=winget
+winget install -e -h --source=winget --id=7zip.7zip
+winget install -e -h --source=winget --id=abbodi1406.vcredist
+winget install -e -h --source=winget --id=AntibodySoftware.WizTree
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskInfo
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskMark
+winget install -e -h --source=winget --id=Klocman.BulkCrapUninstaller
+winget install -e -h --source=winget --id=Microsoft.DirectX
+winget install -e -h --source=winget --id=REALiX.HWiNFO
+winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
 pause
 goto end
 
 :uztechuser
 rem for uztech user
 echo installing uztech user set
-winget install --id=abbodi1406.vcredist -e -h --source=winget
-winget install --id=Google.Chrome -e -h --source=winget
-winget install --id=Klocman.BulkCrapUninstaller -e -h --source=winget
-winget install --id=Microsoft.DirectX -e -h --source=winget
-winget install --id=Mozilla.Firefox -e -h --source=winget
-winget install --id=RARLab.WinRAR -e -h --source=winget
-winget install --id=REALiX.HWiNFO -e -h --source=winget
-winget install --id=VideoLAN.VLC -e -h --source=winget
+winget install -e -h --source=winget --id=abbodi1406.vcredist
+winget install -e -h --source=winget --id=Google.Chrome
+winget install -e -h --source=winget --id=Klocman.BulkCrapUninstaller
+winget install -e -h --source=winget --id=Microsoft.DirectX
+winget install -e -h --source=winget --id=Mozilla.Firefox
+winget install -e -h --source=winget --id=RARLab.WinRAR
+winget install -e -h --source=winget --id=REALiX.HWiNFO
+winget install -e -h --source=winget --id=VideoLAN.VLC
 pause
 goto end
 
@@ -172,17 +171,16 @@ goto end
 rem for windows 10 my server
 powershell -NoProfile -Command "irm winget.pro | iex"
 echo installing windows 10 set
-winget install --id=7zip.7zip -e -h --source=winget
-winget install --id=abbodi1406.vcredist -e -h --source=winget
-winget install --id=AntibodySoftware.WizTree -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskInfo -e -h --source=winget
-winget install --id=CrystalDewWorld.CrystalDiskMark -e -h --source=winget
-winget install --id=DevelopedMethods.playit -e -h --source=winget
-winget install --id=Microsoft.DirectX -e -h --source=winget
-winget install --id=Microsoft.WindowsTerminal -e -h --source=winget
-winget install --id=REALiX.HWiNFO -e -h --source=winget
-winget install --id=SublimeHQ.SublimeText.4 -e -h --source=winget
-winget install --id=Valve.SteamCMD -e -h --source=winget
+winget install -e -h --source=winget --id=7zip.7zip
+winget install -e -h --source=winget --id=abbodi1406.vcredist
+winget install -e -h --source=winget --id=AntibodySoftware.WizTree
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskInfo
+winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskMark
+winget install -e -h --source=winget --id=Microsoft.DirectX
+winget install -e -h --source=winget --id=Microsoft.WindowsTerminal
+winget install -e -h --source=winget --id=REALiX.HWiNFO
+winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
+winget install -e -h --source=winget --id=Valve.SteamCMD
 cd "%~dp0."
 call "patcher-sublime-4200.cmd"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v ProductVersion /t REG_SZ /d "Windows 10" /f
@@ -193,6 +191,9 @@ cd "%~dp0."
 call "%~dp0..\others\sc-installer-ejie.me.clover.cmd"
 timeout /t 5 /nobreak >nul
 call "%~dp0..\others\firewall-add-clover-ejieme.cmd"
+timeout /t 5 /nobreak >nul
+call "%~dp0..\others\sc-downloader-portwarp.cmd"
+call "%~dp0..\others\sc-path-adding-pwrp-7z.cmd"
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& ([ScriptBlock]::Create((irm https://get.activated.win))) /Z-ESU"
 pause
 goto end
