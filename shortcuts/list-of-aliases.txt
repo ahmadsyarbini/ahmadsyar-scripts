@@ -2,6 +2,8 @@
 adb
 Autologon
 Autoruns
+curl
+pwrp
 rclone
 robocopy
 rufus

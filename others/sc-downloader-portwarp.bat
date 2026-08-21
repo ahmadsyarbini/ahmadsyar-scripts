@@ -26,4 +26,6 @@ del "%TEMP%\%ZIP%"
 
 "%INSTALL_DIR%\pwrp.exe" --version
 
+echo file is located at "%INSTALL_DIR%"
+
 timeout /t 3 /nobreak >nul
