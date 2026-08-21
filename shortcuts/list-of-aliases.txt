@@ -1,6 +1,6 @@
 7z
 adb
-Autologon64
+Autologon
 Autoruns
 rclone
 robocopy
