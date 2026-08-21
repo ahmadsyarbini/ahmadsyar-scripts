@@ -3,21 +3,24 @@ setlocal
 
 set "INSTALL_DIR=%USERPROFILE%\pwrp"
 set "ZIP=%TEMP%\pwrp.zip"
-set "URLFILE=%TEMP%\pwrp_url.txt"
+rem set "URLFILE=%TEMP%\pwrp_url.txt"
 
 echo Finding latest Portwarp Windows AMD64 build...
 
-powershell -NoProfile -Command "$h=(Invoke-WebRequest -UseBasicParsing 'https://portwarp.com/downloads').Content; $m=[regex]::Match($h,'https://portwarp\.com/download/pwrp-[^""''\s]+-windows-amd64\.zip'); if($m.Success){$m.Value | Set-Content '%URLFILE%'}else{exit 1}"
+rem simpan jap auto version finder. tengah rosak.
+rem powershell -NoProfile -Command "$h=(Invoke-WebRequest -UseBasicParsing 'https://portwarp.com/downloads').Content; $m=[regex]::Match($h,'https://portwarp\.com/download/pwrp-[^""''\s]+-windows-amd64\.zip'); if($m.Success){$m.Value | Set-Content '%URLFILE%'}else{exit 1}"
 
-if errorlevel 1 (
-    echo Failed to find download URL.
-    exit /b 1
-)
 
-set /p "URL="<"%URLFILE%"
+rem if errorlevel 1 (
+rem     echo Failed to find download URL.
+rem     exit /b 1
+rem )
 
-echo Downloading %URL%
-curl -fL "%URL%" -o "%ZIP%"
+rem set /p "URL="<"%URLFILE%"
+
+rem echo Downloading %URL%
+rem curl -fL "%URL%" -o "%ZIP%"
+curl "https://portwarp.com/download/pwrp-0.3.3-windows-amd64.zip" -o "%ZIP%"
 
 if errorlevel 1 (
     echo Download failed.
@@ -37,7 +40,7 @@ if errorlevel 1 (
 
 rem cleanup
 del "%ZIP%"
-del "%URLFILE%"
+rem del "%URLFILE%"
 
 echo.
 echo Portwarp installed to:
