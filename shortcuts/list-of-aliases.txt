@@ -1,0 +1,13 @@
+7z
+adb
+Autologon
+Autoruns
+curl
+pwrp
+rclone
+robocopy
+rufus
+uad-ng
+ventoy2disk
+wgcf
+winget

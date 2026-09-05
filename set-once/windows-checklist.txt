@@ -1,0 +1,10 @@
+machine name
+
+activate
+
+personalization start
+
+set-once folder
+
+Note:
+uninstall web experience pack does not disable bing start menu web search and apps
