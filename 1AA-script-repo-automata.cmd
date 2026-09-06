@@ -25,7 +25,7 @@ rem mirror to targets
 rem local source condition, mirror from source to pendrive
 if exist "%SourceWinScript%" (
     if exist "%DRIVE%" (
-        robocopy "%SourceWinScript%" "%DRIVE%\Tech" "*" /MIR /DCOPY:D /COPY:D /W:1 /R:1 /NDL /NJH /NJS /NS ".git"
+        robocopy "%SourceWinScript%" "%DRIVE%\Tech" "*" /MIR /DCOPY:D /COPY:D /W:1 /R:1 /NDL /NJH /NJS /NS /XD".git"
 ) else (
     echo missing: "%SourceWinScript%" or "%DRIVE%\Tech"
 )
