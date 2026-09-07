@@ -5,5 +5,5 @@ set "dir=%userprofile%\local-software"
 if not exist "%dir%" mkdir "%dir%"
 cd /d "%dir%"
 curl -L "https://www.grc.com/files/validrive.exe" -o "%dir%\validrive.exe"
-echo download finished
+echo download finished at : "%userprofile%\local-software%"
 timeout /t 5 >nul
