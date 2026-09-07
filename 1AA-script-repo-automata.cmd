@@ -11,10 +11,6 @@ rem ------------------- pendrive drive letter checker ---------------------
 
 for /f "delims=" %%D in ('powershell -NoProfile -Command "Get-Volume | Where-Object { $_.DriveLetter -and (Test-Path ($_.DriveLetter + ':\amr-drive.txt')) } | Select-Object -First 1 -ExpandProperty DriveLetter"') do set "DRIVE=%%D:"
 
-rem for /f "delims=" %%D in ( ^
-rem     'powershell -NoProfile -Command "Get-Volume ^| Where-Object { $_.DriveLetter -and (Test-Path ($_.DriveLetter + ':\amr-drive.txt')) } ^| Select-Object -First 1 -ExpandProperty DriveLetter"' ^
-rem ) do set "DRIVE=%%D:"
-
 if not defined DRIVE (
     echo Target pendrive not found. proceed with git sync
     echo.
