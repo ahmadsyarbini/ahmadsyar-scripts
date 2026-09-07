@@ -23,14 +23,22 @@ echo.
 rem ------------------- mirror to pendrive targets -------------------
 
 rem local source condition, mirror from source to pendrive
-if exist "%SourceWinScript%" (
-    if exist "%DRIVE%" (
-        robocopy "%SourceWinScript%" "%DRIVE%\Tech" "*" /MIR /DCOPY:D /COPY:D /W:1 /R:1 /NDL /NJH /NJS /NS /XD ".git"
+
+rem simpan jap
+rem if exist "%SourceWinScript%" (
+rem     if exist "%DRIVE%" (
+rem         robocopy "%SourceWinScript%" "%DRIVE%\Tech" "*" /MIR /DCOPY:D /COPY:D /W:1 /R:1 /NDL /NJH /NJS /NS /XD ".git"
+rem ) else (
+rem     echo missing: "%SourceWinScript%" or "%DRIVE%\Tech"
+rem )
+rem )
+
+if exist "%SourceWinScript%" if exist "%DRIVE%" (
+    robocopy "%SourceWinScript%" "%DRIVE%\Tech" "*" /MIR /DCOPY:D /COPY:D /W:1 /R:1 /NDL /NJH /NJS /NS /XD ".git"
 ) else (
-    echo missing: "%SourceWinScript%" or "%DRIVE%\Tech"
+    echo missing: "%SourceWinScript%" or "%DRIVE%"
 )
 
-)
 rem condition remote pc with internet exist, mirror github repo to local
 if exist "%localfolder%" (
     call "2AA-has-internet-deployment.cmd" 
@@ -46,5 +54,5 @@ if exist "%SourceWinScript%" (
     echo source ahmadsyar repo not found. skipping git push.
 )
 
-rem pause
-timeout /t 1 /nobreak >nul
+pause
+rem timeout /t 1 /nobreak >nul
