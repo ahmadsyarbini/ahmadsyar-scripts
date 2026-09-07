@@ -41,7 +41,7 @@ cd /d "%EXTRACT_FOLDER%\ahmadsyar-scripts-main"
 rem Robocopy to destination
 echo Copying files to destination...
 if not exist "%DEST_FOLDER%" mkdir "%DEST_FOLDER%"
-robocopy "%EXTRACT_FOLDER%\ahmadsyar-scripts-main" "%DEST_FOLDER%" /mir /xf "*.zip" /njh /njs /ndl /copy:d /dcopy:d
+robocopy "%EXTRACT_FOLDER%\ahmadsyar-scripts-main" "%DEST_FOLDER%" /mir /njh /njs /ndl /copy:d /dcopy:d
 
 rem Cleanup
 cd /d "%DEST_FOLDER%"
