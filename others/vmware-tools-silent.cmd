@@ -11,5 +11,5 @@ for /f "delims=" %%D in ('powershell -NoProfile -Command "Get-Volume | Where-Obj
 
 echo Found: "%VMTOOLS%"
 
-"%VMTOOLS%" /S /v"/qb ADDLOCAL=ALL REBOOT=Force"
+"%VMTOOLS%" /S /v"/qn ADDLOCAL=ALL REBOOT=Force"
 timeout /t 5 /nobreak >nul
