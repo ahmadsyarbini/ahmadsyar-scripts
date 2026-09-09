@@ -13,4 +13,5 @@ curl -L -O "https://github.com/ionuttbara/windows-defender-remover/archive/refs/
 tar -xf main.zip
 del main.zip
 cd windows-defender-remover-main
-Script_Run.bat
+cd script
+script_run.cmd
