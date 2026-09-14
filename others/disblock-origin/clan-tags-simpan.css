@@ -1,0 +1,5 @@
+/* Hide clan tags next to the usernames */
+span[class*="clanTag"], span[class*=guildTagContainer] { display: var(--display-clan-tags, inline-flex); }
+span[class*="clanTag__"] { display: var(--display-clan-tags, inline-flex); } /* member list */
+span[class*="clanTagChiplet_"] { display: var(--display-clan-tags, inline); } /* chat messages */
+span[class*="guildTagContainer__"] { display: var(--display-clan-tags, block); } /* profile */

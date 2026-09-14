@@ -1,0 +1,3 @@
+dism /Get-WimInfo /WimFile:"F:\sources\install.wim" /Index:6
+
+note: index6 is win pro
