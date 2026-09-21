@@ -30,6 +30,7 @@ sc config "CDPSvc" start= disabled
 sc config "ClickToRunSvc" start= demand
 sc config "DiagTrack" start= disabled
 sc config "EABackgroundService" start= demand
+sc config "MapsBroker" start= disabled
 sc config "NvContainerLocalSystem" start= disabled
 sc config "NVDisplay.ContainerLocalSystem" start= disabled
 sc config "PhoneSvc" start= disabled
