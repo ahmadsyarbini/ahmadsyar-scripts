@@ -12,9 +12,6 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 $exePath = "C:\Program Files\Sublime Text\sublime_text.exe"
 
 # Hex string input
-# old template
-# $searchHex  = "0F B6 51 05 83 F2 01"
-# $replaceHex = "C6 41 05 01 B2 00 90"
 $searchHex  = "0F B6 51 0C 83 F2 01"
 $replaceHex = "C6 41 0C 01 31 D2 90"
 
