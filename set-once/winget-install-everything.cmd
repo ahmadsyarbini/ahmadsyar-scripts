@@ -76,7 +76,7 @@ winget install -e -h --source=winget --id=ViRb3.wgcf
 winget install -e -h --source=winget --id=VRCX.VRCX
 winget install -e -h --source=winget --id=WireGuard.WireGuard
 winget install -e -h --source=winget --id=XMediaRecode.XMediaRecode
-call "patcher-sublime-4200.cmd"
+call "patcher-sublime-4213.cmd"
 rem For pinning
 winget pin add BlenderFoundation.Blender
 winget pin add Discord.Discord
@@ -116,7 +116,7 @@ winget install -e -h --source=winget --id=REALiX.HWiNFO
 winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
 winget install -e -h --source=winget --id=Universal-Debloater-Alliance.uad-ng
 winget install -e -h --source=winget --id=WireGuard.WireGuard
-call "patcher-sublime-4200.cmd"
+call "patcher-sublime-4213.cmd"
 pause
 goto end
 

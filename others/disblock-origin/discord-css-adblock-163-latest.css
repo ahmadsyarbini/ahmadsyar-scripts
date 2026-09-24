@@ -16,17 +16,18 @@
 
 :root {
   --display-badges: none;                            /* Nitro and Booster badges on user profiles */
-  --display-gif-button: unset;                        /* GIF button in chat bar */
+  --display-gif-button: none;                        /* GIF button in chat bar */
   --display-sticker-button: none;                    /* Sticker button in chat bar */
   --display-emoji-button: unset;                     /* Emoji button in chat bar */
   --display-hover-reaction-emoji: none;             /* Emoji suggestions on message hover */
   --display-app-launcher: none;                      /* App launcher right of chat bar */
-  --bool-super-reaction-hide-anim: false;             /* Replace Super Reactions with a blink animation */
+  --bool-super-reaction-hide-anim: true;             /* Replace Super Reactions with a blink animation */
   --display-super-reactions: none;                  /* Hide super reactions entirely */
   --display-profile-effects: none;                   /* Effects on profile cards */
   --display-avatar-decorations: none;                /* Decorations on top of avatars */
   --display-nameplates: none;                        /* Hide nameplates in the members list */
-  --display-active-now: none;                       /* Active Now column in friends list */
+  --display-frame-border: none;                      /* Hide the frame border around a profile */
+  --display-active-now: unset;                       /* Active Now column in friends list */
   --display-clan-tags: none;                        /* Clan tags next to the usernames */
   --display-server-settings-boost-tab: none;         /* Server settings menu Boost tab */
   --bool-show-name-gradients: false;                  /* Gradients & glow in usernames, boosted servers only */
@@ -48,6 +49,81 @@
 /* Hide Nitro upsells */
 /* ------------------ */
 
+/* Voice chat custom entrance sound */
+div[data-nav-anchor-key="entrance_sounds_setting"] { display: var(--nitro-features) }
+
+/* Shop This Look */
+div#user-profile-overflow-menu-shop-this-look { display: var(--nitro-features, flex) }
+
+/* Profile frame */
+div[class^=profileFrameContainer_] { display: var(--display-frame-border); }
+
+#user-profile-editing-panel {
+  /* Hide the Nitro upsell container shown at the bottom of the profile modal editor */
+  div[class^="floatingFooter"] {
+    display: none;
+  }
+
+  /* Hide the server-specific profile modal editor upsell section */
+  div[class^="guildProfileUpsell_"] {
+    /* Hide all upsell elements */
+    > * {
+      display: none;
+    }
+
+    /* Add disclaimer, since it looks very weird as an empty sidebar */
+    &:after {
+      content: "(upsells hidden by Disblock Origin; this might be empty)";
+      color: var(--text-default);
+    }
+  }
+
+  /* Remove the gradient that remains when the guild profile upsell is hidden */
+  > div > div[class*="premiumGradientBackground"] {
+    background-image: none;
+  }
+
+  /* Hide groups of customization that are not accessible (Nitro upsell) */
+  div[class^=group]:has(>div[class*=disabled]) {
+    display: none;
+  }
+}
+
+/* Hide custom camera background upsell */
+div[class^="newBackgroundTooltipContainer_"]:has(div[class^="backgroundCustomInlineUpsellBackground_"])  { display: var(--display-nitro-features); }
+
+/* Hide Nitro Rewards */
+div[data-nav-anchor-key="connections_connected_accounts_setting"]
+  > div[class^="stack_"]
+  > div:is([class^="sectionHeader_"], :has(div[class^="card_"])) {
+  display: var(--display-nitro-features);
+}
+
+/* Hide theme upsells */
+div[data-nav-anchor-key="appearance_custom_themes_upsell"],
+div[data-nav-anchor-key="appearance_client_themes"] { display: var(--display-nitro-features);}
+
+/* Hide favorites in settings */
+div[data-nav-anchor-key="chat_favorites_toggle"] { display: var(--display-nitro-features);}
+
+/* Hide the favorites context menu button items */
+div[role="group"]:has(
+  #channel-context-favorite-channel,
+  #user-context-favorite-channel,
+  #gdm-context-favorite-channel
+) {
+  display: var(--display-nitro-features);
+}
+
+/* Hide the separator before favorite context menu items */
+[class^="separator_"]:has(
+  + div[role="group"] #channel-context-favorite-channel,
+  + div[role="group"] #user-context-favorite-channel,
+  + div[role="group"] #gdm-context-favorite-channel
+) {
+  display: var(--display-nitro-features);
+}
+
 li[role="listitem"] {
   /* Hide the "Nitro", "Shop", and "Quests" buttons in Home */
   &:has(a[href="/store"], a[href="/shop"], a[href="/quest-home"]) { display: none; }
@@ -59,17 +135,17 @@ li[role="listitem"] {
 }
 
 /* [Settings][Sidebar] Hide Nitro tabs */
-div[role="list"] nav {
+aside nav ul[data-list-id="settings-sidebar"] {
   @container style(--bool-settings-payment-section: false) {
-    ul[class*="section"]:has(div[data-settings-sidebar-item="nitro_panel"]) { display: none; }
+    li[class*="section"]:has(li[data-settings-sidebar-item="nitro_panel"]) { display: none; }
   }
   @container style(--bool-settings-payment-section: true) {
-    div[class^="sectionLabel__"]:has(+ div[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
-    div[data-settings-sidebar-item="nitro_panel"] { display: var(--display-settings-nitro-tab); } /* Nitro */
-    div[data-settings-sidebar-item="premium_guild_subscriptions_panel"] { display: var(--display-settings-server-boost-tab); } /* Server Boost */
-    div[data-settings-sidebar-item="subscriptions_panel"] { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
-    div[data-settings-sidebar-item="gift_panel"] { display: var(--display-settings-gift-inventory-tab); } /* Gift Inventory */
-    div[data-settings-sidebar-item="billing_panel"] { display: var(--display-nitro-features); } /* Billing */
+    div[class^="sectionLabel__"]:has(+ ul > li[data-settings-sidebar-item="nitro_panel"]) { display: var(--display-settings-billing-header); }  /* Billing Settings header */
+    li[data-settings-sidebar-item="nitro_panel"] { display: var(--display-settings-nitro-tab); } /* Nitro */
+    li[data-settings-sidebar-item="premium_guild_subscriptions_panel"] { display: var(--display-settings-server-boost-tab); } /* Server Boost */
+    li[data-settings-sidebar-item="subscriptions_panel"] { display: var(--display-settings-subscriptions-tab); } /* Subscriptions */
+    li[data-settings-sidebar-item="gift_panel"] { display: var(--display-settings-gift-inventory-tab); } /* Gift Inventory */
+    li[data-settings-sidebar-item="billing_panel"] { display: var(--display-nitro-features); } /* Billing */
   }
 }
 
@@ -216,6 +292,25 @@ div[data-popout-animating] div[class^=picker] {
   div[class*=upsellContainer] { display: none; } /* NOTE: this leaves an ugly space at the bottom, could fix but meh */
 }
 
+/* Modal for "Your message is too long" */
+div[data-mana-component="modal"] {
+  > div[class*=nitro-pink] {
+    /* Hide gradient */
+    &::before {
+      background-image: none;
+    }
+
+    /* Hide text that explains you need Nitro */
+    > header div[class^="headerSubtitleWrapper"] p:nth-of-type(2) {
+      display: none;
+    }
+  }
+
+  footer div[class^="expressiveWrapper"] {
+    display: none;
+  }
+}
+
 /* ------------- */
 /* Server boosts */
 /* ------------- */
@@ -293,7 +388,7 @@ div[class^="container_"][style*="discovery/quest-mountain"] { display: none; }
 div[class^="categoryItem_"]:nth-last-of-type(2) { display: none; }
 
 /* Completed quest profile badge (doesn't provide any use so...) */
-div[class^=tags] div[role="group"] > a[href="https://discord.com/discovery/quests"] { display: none; }
+div[role="group"] a[href="https://discord.com/discovery/quests"] { display: none; }
 
 /* Promoted quest inside "Active Now" friends' profiles */
 div[class^=wrapper]:has(div[class^=instructions]) { display: none; }
@@ -310,7 +405,10 @@ div[id*="popout_"]:has(div[class*="imgWrapper__"] img[src^="https://cdn.discorda
 }
 
 /* Hide friends list 'Active now' quests */
-div[class^="itemCard_"] > div div:has(div[class^="questRewardTile_"]) { display: none; }
+#online-tab ~ div[class^=nowPlayingColumn] div[aria-haspopup="menu"] div[class^="body"] {
+  &> section:not(:last-child) { border-bottom: none; }
+  &> div:has(div[class^="ctas"]) { display: none; }
+}
 
 /* ------------------ */
 /* General annoyances */
@@ -392,9 +490,19 @@ div[class^="listItem_"]:has([data-list-item-id=guildsnav___app-download-button])
 a[data-list-item-id*="___library"] { display: none; }
 
 /* Profile badges */
-div[class^=tags] div[role="group"] {
+div[role="group"] {
   /* Nitro and Server Boosting */
   a[href*="/settings/premium"] { display: var(--display-badges); }
+
+  /* Server booster */
+  a[href*="/settings/guild-boosting"] {
+    display: var(--display-badges);
+  }
+
+  /* Gifter */
+  a:has(img[class*="badge"][src*="/badge-icons/"]) {
+    display: var(--display-badges);
+  }
 
   /* Orbs Apprentice */
   a:has(img[class*="badge"][src*="83d8a1eb09a8d64e59233eec5d4d5c2d"]) { display: none; }
@@ -416,10 +524,10 @@ section[class^="panels"] > [class*="mask"]:has([class*="questRewardTile"]) { dis
 li[role="listitem"] ~ div[class^="container"]:has(div[class^="iconContainer"]) { display: none; }
 
 /* Hide clan tags next to the usernames */
-span[class*="clanTag"], span[class*=guildTagContainer] { display: var(--display-clan-tags, inline-flex); }
 span[class*="clanTag__"] { display: var(--display-clan-tags, inline-flex); } /* member list */
 span[class*="clanTagChiplet_"] { display: var(--display-clan-tags, inline); } /* chat messages */
 span[class*="guildTagContainer__"] { display: var(--display-clan-tags, block); } /* profile */
+span[class*="clanTag"], span[class*=guildTagContainer] { display: var(--display-clan-tags, inline-flex); }
 
 /* Only for some servers, roles get animated gradients + glow */
 @container style(--bool-show-name-gradients: false) or style(--bool-show-name-gradients: 0) {
@@ -493,7 +601,7 @@ div[data-popout-animating][class^=animatorRight]:has(div[class^=hangStatusConten
 
 /* Temporary ad for april fools' */
 #popover-portal + div[class^=layerContainer] > div[class^=container]:has(div[class^=trailer]) { display: none; }
-div[class^=tags] div[role="group"] > a:has(img[class*="badge"][src*="ca105ad9cfc8580c765101d17bbb2323"]) { display: none; }
+div[role="group"] > a:has(img[class*="badge"][src*="ca105ad9cfc8580c765101d17bbb2323"]) { display: none; }
 
 /* ------------------------ */
 /* Disblock Origin branding */
