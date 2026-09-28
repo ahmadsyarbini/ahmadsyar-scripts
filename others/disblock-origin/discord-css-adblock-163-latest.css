@@ -27,7 +27,7 @@
   --display-avatar-decorations: none;                /* Decorations on top of avatars */
   --display-nameplates: none;                        /* Hide nameplates in the members list */
   --display-frame-border: none;                      /* Hide the frame border around a profile */
-  --display-active-now: unset;                       /* Active Now column in friends list */
+  --display-active-now: none;                       /* Active Now column in friends list */
   --display-clan-tags: none;                        /* Clan tags next to the usernames */
   --display-server-settings-boost-tab: none;         /* Server settings menu Boost tab */
   --bool-show-name-gradients: false;                  /* Gradients & glow in usernames, boosted servers only */
