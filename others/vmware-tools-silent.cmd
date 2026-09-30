@@ -12,4 +12,6 @@ for /f "delims=" %%D in ('powershell -NoProfile -Command "Get-Volume | Where-Obj
 echo Found: "%VMTOOLS%"
 
 "%VMTOOLS%" /S /v"/qn ADDLOCAL=ALL REBOOT=ReallySuppress"
+powershell -NoProfile -Command "Rename-Computer -NewName 'WIN11-VM' -Force"
+shutdown /s /t 1
 timeout /t 5 /nobreak >nul
