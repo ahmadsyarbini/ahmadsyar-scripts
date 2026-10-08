@@ -11,12 +11,6 @@ set "OUT=%USERPROFILE%\Downloads\rustdesk-%RANDOM%.exe"
 
 echo Fetching latest RustDesk release...
 
-rem powershell -NoProfile -Command ^
-rem   "$api='https://api.github.com/repos/%REPO%/releases/latest';" ^
-rem   "$asset=(Invoke-RestMethod $api).assets | Where-Object { $_.name -match '^rustdesk-\d+\.\d+\.\d+-x86_64\.exe$' } | Select-Object -First 1;" ^
-rem   "if (-not $asset) { Write-Error 'Installer not found'; exit 1 };" ^
-rem   "Invoke-WebRequest $asset.browser_download_url -OutFile '%OUT%'"
-
 powershell -NoProfile -Command ^
   "$api='https://api.github.com/repos/%REPO%/releases/latest';" ^
   "$asset=(Invoke-RestMethod $api).assets | Where-Object { $_.name -match '^rustdesk-\d+\.\d+\.\d+-x86_64\.exe$' } | Select-Object -First 1;" ^
