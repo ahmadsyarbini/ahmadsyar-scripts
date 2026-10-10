@@ -60,7 +60,9 @@ taskkill /IM "appactions.exe" /T /F
 taskkill /IM "CCLibrary.exe" /T /F
 taskkill /IM "CCXProcess.exe" /T /F
 taskkill /IM "crashpad_handler.exe" /T /F
+taskkill /IM "CredentialEnrollmentManager.exe" /T /F
 taskkill /IM "CrossDeviceResume.exe" /T /F
+taskkill /IM "DefenderSessionHelper.exe" /T /F
 taskkill /IM "nvcontainer.exe" /T /F
 taskkill /IM "NVIDIA App.exe" /T /F
 taskkill /IM "smartscreen.exe" /T /F
