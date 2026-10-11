@@ -28,7 +28,7 @@ winget install -e -h --source=winget --id=64Gram.64Gram
 winget install -e -h --source=winget --id=7zip.7zip
 winget install -e -h --source=winget --id=abbodi1406.vcredist
 winget install -e -h --source=winget --id=anatawa12.ALCOM
-winget install -e -h --source=winget --id=AnInsomniacy.MotrixNext
+winget install -e -h --source=winget --id=AnInsomniacy.Rayburst
 winget install -e -h --source=winget --id=AntibodySoftware.WizTree
 winget install -e -h --source=winget --id=AntSoftware.AntRenamer
 winget install -e -h --source=winget --id=Audacity.Audacity
@@ -97,7 +97,7 @@ winget install -e -h --source=msstore --id=9NKSQGP7F2NH & rem whatsapp ms store
 winget install -e -h --source=winget --id=64Gram.64Gram
 winget install -e -h --source=winget --id=7zip.7zip
 winget install -e -h --source=winget --id=abbodi1406.vcredist
-winget install -e -h --source=winget --id=AnInsomniacy.MotrixNext
+winget install -e -h --source=winget --id=AnInsomniacy.Rayburst
 winget install -e -h --source=winget --id=AntibodySoftware.WizTree
 winget install -e -h --source=winget --id=AntSoftware.AntRenamer
 winget install -e -h --source=winget --id=CodecGuide.K-LiteCodecPack.Standard
