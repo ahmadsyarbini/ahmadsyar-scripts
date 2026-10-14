@@ -190,11 +190,11 @@ reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleas
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleaseVersionInfo /t REG_SZ /d "22H2" /f
 echo installing clover
 cd "%~dp0."
-call "%~dp0..\others\sc-installer-ejie.me.clover.cmd"
+call "%~dp0..\others\script-installer\sc-installer-ejie.me.clover.cmd"
 timeout /t 5 /nobreak >nul
 call "%~dp0..\others\firewall-add-clover-ejieme.cmd"
 timeout /t 5 /nobreak >nul
-call "%~dp0..\others\sc-downloader-portwarp.cmd"
+call "%~dp0..\others\script-installer\sc-downloader-portwarp.cmd"
 call "%~dp0..\others\sc-path-adding-pwrp-7z.cmd"
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "& ([ScriptBlock]::Create((irm https://get.activated.win))) /Z-ESU"
 pause
@@ -205,20 +205,6 @@ rem do nothing
 echo nothing is done
 pause
 goto end
-
-rem simpanan vcredist
-rem winget install --id=Microsoft.VCRedist.2005.x64 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2005.x86 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2008.x64 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2008.x86 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2010.x64 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2010.x86 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2012.x64 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2012.x86 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2013.x64 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2013.x86 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2015+.x64 -e -h --source winget
-rem winget install --id=Microsoft.VCRedist.2015+.x86 -e -h --source winget
 
 :end
 exit
