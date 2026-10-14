@@ -170,8 +170,8 @@ goto end
 :wten
 rem for windows 10 my server
 powershell -NoProfile -Command "irm winget.pro | iex"
-echo wait 10 seconds
-timeout /t 10 /nobreak >nul
+echo wait 30 seconds
+timeout /t 30 /nobreak >nul
 echo installing windows 10 set
 winget install -e -h --source=winget --id=7zip.7zip
 winget install -e -h --source=winget --id=abbodi1406.vcredist
