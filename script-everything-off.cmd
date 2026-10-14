@@ -68,5 +68,6 @@ taskkill /IM "NVIDIA App.exe" /T /F
 taskkill /IM "smartscreen.exe" /T /F
 taskkill /IM "TabTip.exe" /T /F
 taskkill /IM "WebDriver.exe" /T /F
+schtasks /Change /TN "\Microsoft\Windows\International\Synchronize Language Settings" /Disable
 timeout /t 1 /nobreak >nul
 rem pause

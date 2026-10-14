@@ -169,10 +169,10 @@ goto end
 
 :wten
 rem for windows 10 my server
-cd /d "%TEMP%"
-curl.exe -fL --retry 3 --limit-rate 5M -o winget.msixbundle "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" || exit /b 1
-echo wait 30 seconds
-timeout /t 30 /nobreak >nul
+winget --version >nul 2>&1 || (cd /d "%TEMP%" & curl.exe -fL --retry 3 --limit-rate 5M -o winget.msixbundle "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" || exit /b 1)
+del "%TEMP%\winget.msixbundle" 2>nul
+echo wait 10 seconds
+timeout /t 10 /nobreak >nul
 echo installing windows 10 set
 winget install -e -h --source=winget --id=7zip.7zip
 winget install -e -h --source=winget --id=abbodi1406.vcredist
