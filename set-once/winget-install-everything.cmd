@@ -169,7 +169,8 @@ goto end
 
 :wten
 rem for windows 10 my server
-powershell -NoProfile -Command "irm winget.pro | iex"
+cd /d "%TEMP%"
+curl.exe -fL --retry 3 --limit-rate 5M -o winget.msixbundle "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" || exit /b 1
 echo wait 30 seconds
 timeout /t 30 /nobreak >nul
 echo installing windows 10 set
