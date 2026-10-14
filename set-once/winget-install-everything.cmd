@@ -184,7 +184,7 @@ winget install -e -h --source=winget --id=REALiX.HWiNFO
 winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
 winget install -e -h --source=winget --id=Valve.SteamCMD
 cd "%~dp0."
-call "patcher-sublime-4200.cmd"
+call "patcher-sublime-4215.cmd"
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v ProductVersion /t REG_SZ /d "Windows 10" /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleaseVersion /t REG_DWORD /d 1 /f
 reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v TargetReleaseVersionInfo /t REG_SZ /d "22H2" /f
