@@ -9,6 +9,6 @@ echo Turn off windows security real time protection temporarily
 echo.
 echo then press any key to continue
 pause
-for /f "usebackq delims=" %%A in (`powershell -NoProfile -Command "$r=Invoke-RestMethod 'https://api.github.com/repos/ionuttbara/windows-defender-remover/releases/latest'; $a=$r.assets | Where-Object { $_.name -match '^Defender Remover.*\.exe$' } | Select-Object -First 1; if ($a) { $a.browser_download_url }"`) do set "URL=%%A"
-curl.exe -fL --limit-rate 5M -o "%USERPROFILE%\Downloads\DefenderRemover.exe" "%URL%"
+for /f "usebackq delims=" %%A in (`powershell -NoProfile -Command "$r=Invoke-RestMethod 'https://api.github.com/repos/ionuttbara/windows-defender-remover/releases/latest'; ($r.assets | Where-Object { $_.name -match '\.exe$' } | Select-Object -First 1).browser_download_url"`) do set "URL=%%A"
+curl.exe -fL --retry 3 --limit-rate 5M -o "%USERPROFILE%\Downloads\defenderremover.exe" "%URL%"
 "%USERPROFILE%\Downloads\DefenderRemover.exe" /r
