@@ -1,9 +1,5 @@
 @echo off
 setlocal
-rem Admin priv elevator
-net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
-rem End of admin elevator
-
 rem FileBrowser Quantum
 set "REPO=gtsteffaniak/filebrowser"
 set "OUT=%USERPROFILE%\fbq\filebrowser.exe"
