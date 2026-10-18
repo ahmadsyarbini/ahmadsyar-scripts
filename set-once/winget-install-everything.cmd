@@ -169,8 +169,17 @@ goto end
 
 :wten
 rem for windows 10 my server
-winget --version >nul 2>&1 || (cd /d "%TEMP%" & curl.exe -fL --retry 3 --limit-rate 5M -o winget.msixbundle "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" || exit /b 1)
+rem check winget part
+winget --version >nul 2>&1 && exit /b 0
+cd /d "%TEMP%" || exit /b 1
+curl.exe -fL --retry 3 --limit-rate 5M -o winget.msixbundle "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle"
+if errorlevel 1 exit /b 1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Add-AppxPackage -Path '%TEMP%\winget.msixbundle' -ErrorAction Stop"
+if errorlevel 1 exit /b 1
+winget --version
+if errorlevel 1 exit /b 1
 del "%TEMP%\winget.msixbundle" 2>nul
+rem check winget part
 echo wait 10 seconds
 timeout /t 10 /nobreak >nul
 echo installing windows 10 set
