@@ -1,6 +1,6 @@
 @echo off
 title Script Folder Mirroring
-
+setlocal EnableDelayedExpansion
 rem source
 set "SourceWinScript=%userprofile%\My Drive\Documents\Tech"
 rem targets
@@ -30,12 +30,12 @@ if exist "%SourceWinScript%" if exist "%DRIVE%" (
     echo missing: "%SourceWinScript%" or "%DRIVE%"
 )
 
-rem ------------------- condition remote pc with internet exist, mirror github repo to local -------------------
+rem ------------------- condition remote pc with internet exist mirror github repo to local -------------------
 if exist "%localfolder%" (
     call "2AA-has-internet-deployment.cmd" 
 )
 
-rem ------------------- push to github, if on local source -------------------
+rem ------------------- push to github if on local source -------------------
 if exist "%SourceWinScript%" (
     cd /d "%SourceWinScript%"
     git add -A

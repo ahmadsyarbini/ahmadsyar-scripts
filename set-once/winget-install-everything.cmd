@@ -181,8 +181,8 @@ if errorlevel 1 exit /b 1
 del "%TEMP%\deps.zip" "%TEMP%\winget.msixbundle"
 rmdir /s /q "%TEMP%\winget-deps"
 rem check winget part
-echo wait 10 seconds
-timeout /t 10 /nobreak >nul
+echo wait 1 seconds
+timeout /t 2 /nobreak >nul
 echo installing windows 10 set
 winget install -e -h --source=winget --id=7zip.7zip
 winget install -e -h --source=winget --id=abbodi1406.vcredist

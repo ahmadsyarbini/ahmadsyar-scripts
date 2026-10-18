@@ -1,5 +1,5 @@
 @echo off
-
+setlocal EnableDelayedExpansion
 set "local-tech=%userprofile%\amr-scripts\Tech"
 set "local-local-tech=%userprofile%\amr-scripts\Local-Tech"
 set "SourceWinScript=%userprofile%\My Drive\Documents\Tech"
