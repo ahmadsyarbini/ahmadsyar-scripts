@@ -56,16 +56,7 @@ set "TargetArgs=/c \"%TargetPath%\""
 set "ShortcutPath=%local-local-tech%\script-everything-off.lnk"
 rem Create shortcut
 if not exist "%local-local-tech%" mkdir "%local-local-tech%"
-powershell -NoProfile -Command ^
-$WshShell = New-Object -ComObject WScript.Shell; ^
-$Shortcut = $WshShell.CreateShortcut('%ShortcutPath%'); ^
-$Shortcut.TargetPath = '%TargetExe%'; ^
-$Shortcut.Arguments = '%TargetArgs%'; ^
-$Shortcut.WorkingDirectory = Split-Path '%TargetPath%'; ^
-$Shortcut.Save(); ^
-$bytes = [System.IO.File]::ReadAllBytes('%ShortcutPath%'); ^
-$bytes[21] = $bytes[21] -bor 0x20; ^
-[System.IO.File]::WriteAllBytes('%ShortcutPath%', $bytes)
+powershell -NoProfile -Command "$WshShell = New-Object -ComObject WScript.Shell; $Shortcut = $WshShell.CreateShortcut('%ShortcutPath%'); $Shortcut.TargetPath = '%TargetExe%'; $Shortcut.Arguments = '%TargetArgs%'; $Shortcut.WorkingDirectory = Split-Path '%TargetPath%'; $Shortcut.Save(); $bytes = [System.IO.File]::ReadAllBytes('%ShortcutPath%'); $bytes[21] = $bytes[21] -bor 0x20; [System.IO.File]::WriteAllBytes('%ShortcutPath%', $bytes)"
 echo shortcut created
 rem pause
 timeout /t 2 /nobreak >nul
