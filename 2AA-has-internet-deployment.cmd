@@ -1,5 +1,5 @@
 @echo off
-setlocal EnableDelayedExpansion
+rem setlocal EnableDelayedExpansion
 set "SourceWinScript=%userprofile%\My Drive\Documents\Tech"
 set "REPO_URL=https://github.com/ahmadsyarbini/ahmadsyar-scripts/archive/refs/heads/main.zip"
 set "ZIP_FILE=%TEMP%\repo.zip"
