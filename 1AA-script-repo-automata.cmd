@@ -1,6 +1,6 @@
 @echo off
 title Script Folder Mirroring
-setlocal EnableDelayedExpansion
+rem setlocal EnableDelayedExpansion
 rem source
 set "SourceWinScript=%userprofile%\My Drive\Documents\Tech"
 rem targets
