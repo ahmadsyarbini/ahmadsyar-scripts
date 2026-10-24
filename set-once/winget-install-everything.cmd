@@ -31,6 +31,8 @@ winget install -e -h --source=winget --id=anatawa12.ALCOM
 winget install -e -h --source=winget --id=AnInsomniacy.Rayburst
 winget install -e -h --source=winget --id=AntibodySoftware.WizTree
 winget install -e -h --source=winget --id=AntSoftware.AntRenamer
+winget install -e -h --source=winget --id=ArtCraft.PdfCraft
+winget install -e -h --source=winget --id=ArtCraft.VectorCraft
 winget install -e -h --source=winget --id=Audacity.Audacity
 winget install -e -h --source=winget --id=AutoHotkey.AutoHotkey
 winget install -e -h --source=winget --id=ch.LosslessCut
