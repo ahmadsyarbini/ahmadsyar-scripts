@@ -34,7 +34,6 @@ winget install -e -h --source=winget --id=AntSoftware.AntRenamer
 winget install -e -h --source=winget --id=ArtCraft.PdfCraft
 winget install -e -h --source=winget --id=ArtCraft.VectorCraft
 winget install -e -h --source=winget --id=Audacity.Audacity
-winget install -e -h --source=winget --id=AutoHotkey.AutoHotkey
 winget install -e -h --source=winget --id=ch.LosslessCut
 winget install -e -h --source=winget --id=CodecGuide.K-LiteCodecPack.Standard
 winget install -e -h --source=winget --id=CPUID.CPU-Z
