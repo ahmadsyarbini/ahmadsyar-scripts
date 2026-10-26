@@ -14,7 +14,6 @@ if not exist "%firefoxpath%" exit /b
 echo.
 echo found firefox profile dir at "%firefoxpath%"
 
-
 cd /d "%firefoxpath%"
 (
 echo user_pref^("browser.aboutwelcome.didSeeFinalScreen", true^);
