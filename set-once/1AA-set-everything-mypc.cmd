@@ -21,6 +21,6 @@ rem openrgb part
 call "script-create-tasksch-openrgb-lightsoff.cmd"
 rem winget autoupdate part
 call "script-create-tasksch-winget-autoupdate.cmd"
-call "script-conhost-theme.cmd"
+call "script-settings-conhost.cmd"
 rem windows terminal settings
-call script-wterminal-settings.cmd
+call "script-settings-wterminal.cmd"
