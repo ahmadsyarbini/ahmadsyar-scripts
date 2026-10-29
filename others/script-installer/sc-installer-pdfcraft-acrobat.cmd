@@ -25,6 +25,7 @@ if not exist "%OUT%" (
 
 echo Installing PdfCraft silently...
 msiexec /i "%OUT%" /qn /norestart
+rem msiexec /i "%OUT%"
 
 timeout /t 3 /nobreak >nul
 
