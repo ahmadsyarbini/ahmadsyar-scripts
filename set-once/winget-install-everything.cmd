@@ -171,7 +171,7 @@ goto end
 :wten
 rem for windows 10 my server
 rem check winget part
-winget --version >nul 2>&1 && exit /b 0
+winget --version >nul 2>&1 && goto :winget_done
 cd /d "%TEMP%" || exit /b 1
 curl.exe -fL --retry 3 --limit-rate 5M -o deps.zip "https://github.com/microsoft/winget-cli/releases/latest/download/DesktopAppInstaller_Dependencies.zip" || exit /b 1
 curl.exe -fL --retry 3 --limit-rate 5M -o winget.msixbundle "https://github.com/microsoft/winget-cli/releases/latest/download/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle" || exit /b 1
@@ -181,6 +181,7 @@ winget --version
 if errorlevel 1 exit /b 1
 del "%TEMP%\deps.zip" "%TEMP%\winget.msixbundle"
 rmdir /s /q "%TEMP%\winget-deps"
+:winget_done
 rem check winget part
 echo wait 1 seconds
 timeout /t 2 /nobreak >nul
@@ -191,6 +192,7 @@ winget install -e -h --source=winget --id=AntibodySoftware.WizTree
 winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskInfo
 winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskMark
 winget install -e -h --source=winget --id=Microsoft.DirectX
+winget install -e -h --source=winget --id=Microsoft.Sysinternals.Autologon
 winget install -e -h --source=winget --id=Microsoft.WindowsTerminal
 winget install -e -h --source=winget --id=REALiX.HWiNFO
 winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
