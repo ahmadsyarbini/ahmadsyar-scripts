@@ -24,7 +24,7 @@ if not exist "%OUT%" (
 )
 
 echo Installing SoundCraft silently...
-msiexec /i "%OUT%" /qn /norestart
+msiexec /i "%OUT%" /qn /norestart ALLUSERS=1
 
 timeout /t 3 /nobreak >nul
 
