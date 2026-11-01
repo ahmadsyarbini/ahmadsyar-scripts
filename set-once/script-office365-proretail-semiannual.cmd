@@ -1,19 +1,19 @@
 @echo off
 title Microsoft Office 365 Pro Retail Semi Annual Channel
 setlocal
-rem  Admin priv elevator
+rem  admin elevator
 net session >nul 2>&1 || (powershell -c "Start-Process '%~f0' -Verb RunAs" & exit /b)
-rem  End of admin elevator
+rem  end of admin elevator
 
-rem Temp workspace
+rem temp workspace
 set "WORKDIR=%TEMP%\OfficeSetup"
 set "CONFIG_FILE=%WORKDIR%\configuration.xml"
 set "SETUP_EXE=%WORKDIR%\setup.exe"
 
-rem Create working directory
+rem create working directory
 if not exist "%WORKDIR%" md "%WORKDIR%"
 
-rem Generate configuration.xml
+rem generate configuration.xml
 > "%CONFIG_FILE%" (
   echo ^<Configuration^>
   echo    ^<Add OfficeClientEdition="64" Channel="SemiAnnual"^>
@@ -38,12 +38,10 @@ rem Generate configuration.xml
   echo ^</Configuration^>
 )
 
-rem Download setup.exe directly from Microsoft CDN
-rem powershell -Command ^
-rem "Invoke-WebRequest -Uri 'https://officecdn.microsoft.com/pr/wsus/setup.exe' -OutFile '%WORKDIR%\setup.exe'"
+rem download setup.exe directly from Microsoft CDN
 curl -L "https://officecdn.microsoft.com/pr/wsus/setup.exe" -o "%WORKDIR%\setup.exe"
 
-rem Run installer with visual progress
+rem run installer with showing progress
 if exist "%SETUP_EXE%" (
   echo Launching Office 365 installer
   "%SETUP_EXE%" /configure "%CONFIG_FILE%"
@@ -51,7 +49,7 @@ if exist "%SETUP_EXE%" (
   echo Error: setup.exe not found. Download may have failed.
 )
 
-rem Cleanup
+rem cleanup
 cd /d %temp%
 rd /s /q "%WORKDIR%"
 
