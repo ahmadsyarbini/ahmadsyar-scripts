@@ -14,7 +14,7 @@ powershell -NoProfile -Command ^
   "$rel=$r | Where-Object { -not $_.prerelease -and $_.tag_name -match '-stable$' } | Select-Object -First 1;" ^
   "$asset=$rel.assets | Where-Object { $_.name -eq 'filebrowser.exe' } | Select-Object -First 1;" ^
   "if (-not $asset) { Write-Error 'Stable executable not found'; exit 1 };" ^
-  "curl.exe -fL --retry 3 --limit-rate 5M --output '%OUT%' $asset.browser_download_url"
+  "curl.exe -fL --retry 3 --limit-rate 8M --output '%OUT%' $asset.browser_download_url"
 
 if errorlevel 1 (
   echo Download failed.
