@@ -27,6 +27,8 @@ rem the xml part
   echo   ^<Settings^>
   echo     ^<MultipleInstancesPolicy^>IgnoreNew^</MultipleInstancesPolicy^>
   echo     ^<StartWhenAvailable^>true^</StartWhenAvailable^>
+  echo     ^<DisallowStartIfOnBatteries^>false^</DisallowStartIfOnBatteries^>
+  echo     ^<StopIfGoingOnBatteries^>false^</StopIfGoingOnBatteries^>
   echo   ^</Settings^>
   echo   ^<Actions Context="Author"^>
   echo     ^<Exec^>

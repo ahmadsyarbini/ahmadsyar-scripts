@@ -25,12 +25,12 @@ md "%xmlDir%" 2>nul
   echo     ^</Principal^>
   echo   ^</Principals^>
   echo   ^<Settings^>
-  echo     ^<MultipleInstancesPolicy^>IgnoreNew^</MultipleInstancesPolicy^>
-  echo     ^<DisallowStartIfOnBatteries^>false^</DisallowStartIfOnBatteries^>
-  echo     ^<StopIfGoingOnBatteries^>false^</StopIfGoingOnBatteries^>
   echo     ^<AllowHardTerminate^>true^</AllowHardTerminate^>
-  echo     ^<StartWhenAvailable^>true^</StartWhenAvailable^>
+  echo     ^<DisallowStartIfOnBatteries^>false^</DisallowStartIfOnBatteries^>
+  echo     ^<MultipleInstancesPolicy^>IgnoreNew^</MultipleInstancesPolicy^>
   echo     ^<RunOnlyIfNetworkAvailable^>false^</RunOnlyIfNetworkAvailable^>
+  echo     ^<StartWhenAvailable^>true^</StartWhenAvailable^>
+  echo     ^<StopIfGoingOnBatteries^>false^</StopIfGoingOnBatteries^>
   echo     ^<IdleSettings^>
   echo       ^<StopOnIdleEnd^>true^</StopOnIdleEnd^>
   echo       ^<RestartOnIdle^>false^</RestartOnIdle^>
