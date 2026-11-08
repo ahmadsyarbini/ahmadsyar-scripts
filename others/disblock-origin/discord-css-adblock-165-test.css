@@ -21,13 +21,13 @@
   --display-emoji-button: unset;                     /* Emoji button in chat bar */
   --display-hover-reaction-emoji: none;             /* Emoji suggestions on message hover */
   --display-app-launcher: none;                      /* App launcher right of chat bar */
-  --bool-super-reaction-hide-anim: true;             /* Replace Super Reactions with a blink animation */
+  --bool-super-reaction-hide-anim: false;             /* Replace Super Reactions with a blink animation */
   --display-super-reactions: none;                  /* Hide super reactions entirely */
   --display-profile-effects: none;                   /* Effects on profile cards */
   --display-avatar-decorations: none;                /* Decorations on top of avatars */
   --display-nameplates: none;                        /* Hide nameplates in the members list */
   --display-frame-border: none;                      /* Hide the frame border around a profile */
-  --display-active-now: none;                       /* Active Now column in friends list */
+  --display-active-now: unset;                       /* Active Now column in friends list */
   --display-clan-tags: none;                        /* Clan tags next to the usernames */
   --display-server-settings-boost-tab: none;         /* Server settings menu Boost tab */
   --bool-show-name-gradients: false;                  /* Gradients & glow in usernames, boosted servers only */
@@ -60,7 +60,9 @@ div[class^=profileFrameContainer_] { display: var(--display-frame-border); }
 
 #user-profile-editing-panel {
   /* Hide the Nitro upsell container shown at the bottom of the profile modal editor */
-  div[class^="floatingFooter"] {
+  div[class^="floatingFooter"],
+  div[class^="premiumTryItOutSection__"],
+  div[class^="premiumTryItOutSection__"] + div:has(button) {
     display: none;
   }
 
@@ -79,7 +81,7 @@ div[class^=profileFrameContainer_] { display: var(--display-frame-border); }
   }
 
   /* Remove the gradient that remains when the guild profile upsell is hidden */
-  > div > div[class*="premiumGradientBackground"] {
+  div[class*="premiumGradientBackground"] {
     background-image: none;
   }
 
@@ -235,6 +237,7 @@ div[class^=profileButtons], .user-profile-sidebar > div > div > div[class^=wrapp
 
 /* Emoji popout: "Get nitro" button */
 button[class^=shinyButton]:has(div[class*=premiumSubscribeButton]) { display: none; }
+div[class^=emojiSection_] div:has(button[class*=expressive_]) { display: none; }
 
 /* Emoji popout: "Powered by nitro" text */
 div[class^=nitroTextAndBadge] { display: none; }
@@ -309,6 +312,11 @@ div[data-mana-component="modal"] {
   footer div[class^="expressiveWrapper"] {
     display: none;
   }
+}
+
+/* Nitro-related ads announcement popups on the top-left */
+#popover-portal + div div[data-mana-component="popover"]:has(div[class^=expressiveWrapper]) {
+  display: none;
 }
 
 /* ------------- */
@@ -408,6 +416,17 @@ div[id*="popout_"]:has(div[class*="imgWrapper__"] img[src^="https://cdn.discorda
 #online-tab ~ div[class^=nowPlayingColumn] div[aria-haspopup="menu"] div[class^="body"] {
   &> section:not(:last-child) { border-bottom: none; }
   &> div:has(div[class^="ctas"]) { display: none; }
+}
+
+/* Orbs (virtual currency) */
+
+/* Orbs counter in profile popout */
+section + div[class^=menus] div[class*="menuOverlay_"]:first-child li[class^=menuItem] {
+  /* The separator for the button */
+  &:has(+li>div>div>div[class*=orbUserStatusMenuIconWrapper]):after { display: none; }
+
+  /* The counter itself */
+  &:last-child:has(>div>div>div[class*=orbUserStatusMenuIconWrapper]) { display: none; }
 }
 
 /* ------------------ */
@@ -526,7 +545,7 @@ li[role="listitem"] ~ div[class^="container"]:has(div[class^="iconContainer"]) {
 /* Hide clan tags next to the usernames */
 span[class*="clanTag__"] { display: var(--display-clan-tags, inline-flex); } /* member list */
 span[class*="clanTagChiplet_"] { display: var(--display-clan-tags, inline); } /* chat messages */
-span[class*="guildTagContainer__"] { display: var(--display-clan-tags, block); } /* profile */
+span[class*="guildTagPill__"] { display: var(--display-clan-tags, block); } /* profile */
 span[class*="clanTag"], span[class*=guildTagContainer] { display: var(--display-clan-tags, inline-flex); }
 
 /* Only for some servers, roles get animated gradients + glow */
@@ -543,7 +562,9 @@ span[class*="clanTag"], span[class*=guildTagContainer] { display: var(--display-
 }
 
 /* Hide server members activity title */
-h3[class^="membersGroup_"]:has(span[class^="headerContainer__"]) { display: var(--display-server-members-activity, block); }
+h3[class*="membersGroup_"]:has(div[class^="headerContainer__"]) {
+  display: var(--display-server-members-activity, block);
+}
 
 /* Hide server members activity cards */
 div[class^="members_"] div:not([class]):has(div[class*="openOnHover__"]) { display: var(--display-server-members-activity); }

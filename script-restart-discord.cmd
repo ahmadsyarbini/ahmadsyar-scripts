@@ -2,7 +2,8 @@
 rem README
 rem this script is for clearing discord cache and restarting it
 echo Force closing Discord...
-taskkill /F /IM discord.exe >nul 2>&1
+taskkill /F /IM Discord.exe >nul 2>&1
+taskkill /F /IM DiscordSystemHelper.exe >nul 2>&1
 timeout /t 2 >nul
 
 echo Navigating to Discord AppData folder...
