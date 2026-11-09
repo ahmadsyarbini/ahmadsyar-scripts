@@ -40,7 +40,6 @@ winget install -e -h --source=winget --id=CPUID.CPU-Z
 winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskInfo
 winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskMark
 winget install -e -h --source=winget --id=dev47apps.DroidCamOBSPlugin
-winget install -e -h --source=winget --id=Discord.Discord
 winget install -e -h --source=winget --id=EpicGames.EpicGamesLauncher
 winget install -e -h --source=winget --id=FlorianHeidenreich.Mp3tag
 winget install -e -h --source=winget --id=flux.flux
@@ -66,6 +65,7 @@ winget install -e -h --source=winget --id=Rclone.Rclone
 winget install -e -h --source=winget --id=REALiX.HWiNFO
 winget install -e -h --source=winget --id=RubyInstallerTeam.RubyWithDevKit.3.4
 winget install -e -h --source=winget --id=Rufus.Rufus
+winget install -e -h --source=winget --id=SpikeHD.Dorion
 winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
 winget install -e -h --source=winget --id=TechPowerUp.GPU-Z
 winget install -e -h --source=winget --id=TechPowerUp.NVCleanstall
@@ -80,7 +80,7 @@ winget install -e -h --source=winget --id=XMediaRecode.XMediaRecode
 call "patcher-sublime-4213.cmd"
 rem For pinning
 winget pin add BlenderFoundation.Blender
-winget pin add Discord.Discord
+winget pin add SpikeHD.Dorion
 winget pin add EpicGames.EpicGamesLauncher
 winget pin add EpicGames.EpicOnlineServices
 winget pin add Guru3D.RTSS
@@ -104,7 +104,6 @@ winget install -e -h --source=winget --id=AntSoftware.AntRenamer
 winget install -e -h --source=winget --id=CodecGuide.K-LiteCodecPack.Standard
 winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskInfo
 winget install -e -h --source=winget --id=CrystalDewWorld.CrystalDiskMark
-winget install -e -h --source=winget --id=Discord.Discord
 winget install -e -h --source=winget --id=flux.flux
 winget install -e -h --source=winget --id=Google.Chrome
 winget install -e -h --source=winget --id=Google.GoogleDrive
@@ -114,6 +113,7 @@ winget install -e -h --source=winget --id=Microsoft.Sysinternals.Autologon
 winget install -e -h --source=winget --id=Microsoft.WindowsTerminal
 winget install -e -h --source=winget --id=Mozilla.Firefox
 winget install -e -h --source=winget --id=REALiX.HWiNFO
+winget install -e -h --source=winget --id=SpikeHD.Dorion
 winget install -e -h --source=winget --id=SublimeHQ.SublimeText.4
 winget install -e -h --source=winget --id=Universal-Debloater-Alliance.uad-ng
 winget install -e -h --source=winget --id=WireGuard.WireGuard
