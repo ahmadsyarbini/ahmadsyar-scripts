@@ -37,7 +37,7 @@ if not exist "%destination_l%" mkdir "%destination_l%"
 robocopy "%source_linux%" "%destination_l%" "*linuxmint*.iso" /purge /NDL /NJH /NJS /NS /Z /R:1 /W:1
 
 REM copy background to root
-robocopy "%userprofile%\My Drive\Photos\Wallpaper" "%~dp0." "background.png" /purge /z /copy:d /dcopy:d /r:1 /w:1 /ndl /njs /njh
+robocopy "%userprofile%\My Drive\Photos\Wallpaper" "%~dp0." "background.*" /purge /z /copy:d /dcopy:d /r:1 /w:1 /ndl /njs /njh
 
 rem pause
 timeout /t 3 >nul
