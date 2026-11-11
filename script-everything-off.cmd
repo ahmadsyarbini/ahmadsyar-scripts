@@ -1,7 +1,6 @@
 @echo off
 del "%userprofile%\Desktop\*.lnk" /f /q
 del "C:\Users\Public\Desktop\*.lnk" /f /q
-net stop "AdobeARMservice"
 net stop "CDPSvc"
 net stop "ClickToRunSvc"
 net stop "DiagTrack"
@@ -25,7 +24,6 @@ net stop "XboxGipSvc"
 net stop "XboxNetApiSvc"
 netsh interface set interface "VMware Network Adapter VMnet1" admin=disable
 netsh interface set interface "VMware Network Adapter VMnet8" admin=disable
-sc config "AdobeARMservice" start= disabled
 sc config "CDPSvc" start= disabled
 sc config "ClickToRunSvc" start= demand
 sc config "DiagTrack" start= disabled
@@ -53,12 +51,8 @@ schtasks.exe /Change /TN "Launch Adobe CCXProcess" /Disable
 schtasks.exe /Change /TN "SamsungMagician" /Disable
 soundvolumeview /SetVolume "ATR USB microphone\Device\Microphone\Capture" 90
 soundvolumeview /SetVolume "ATR USB microphone\Device\Speakers\Render" 50
-taskkill /F /FI "IMAGENAME eq Adobe*" /T
-taskkill /IM "acrotray.exe" /T /F
 taskkill /IM "adb.exe" /T /F
 taskkill /IM "appactions.exe" /T /F
-taskkill /IM "CCLibrary.exe" /T /F
-taskkill /IM "CCXProcess.exe" /T /F
 taskkill /IM "crashpad_handler.exe" /T /F
 taskkill /IM "CredentialEnrollmentManager.exe" /T /F
 taskkill /IM "CrossDeviceResume.exe" /T /F
