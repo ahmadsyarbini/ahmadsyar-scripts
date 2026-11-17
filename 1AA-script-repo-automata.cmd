@@ -1,10 +1,7 @@
 @echo off
 title Script Folder Mirroring
 rem setlocal EnableDelayedExpansion
-rem source
 set "SourceWinScript=%userprofile%\My Drive\Documents\Tech"
-rem targets
-rem set "targetpdrive=F:\Tech"
 set "localfolder=%userprofile%\amr-scripts\Tech"
 
 rem ------------------- pendrive drive letter checker ---------------------
@@ -30,7 +27,7 @@ if exist "%SourceWinScript%" if exist "%DRIVE%" (
     echo missing: "%SourceWinScript%" or "%DRIVE%"
 )
 
-rem ------------------- condition remote pc with internet exist mirror github repo to local -------------------
+rem ----- condition remote pc with internet exist mirror github repo to local ----------
 if exist "%localfolder%" (
     call "2AA-has-internet-deployment.cmd" 
 )
