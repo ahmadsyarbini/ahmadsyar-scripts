@@ -47,7 +47,6 @@ sc config "XboxGipSvc" start= demand
 sc config "XboxNetApiSvc" start= demand
 sc delete "logi_lamparray_service"
 schtasks.exe /Change /TN "klcp_update" /Disable
-schtasks.exe /Change /TN "Launch Adobe CCXProcess" /Disable
 schtasks.exe /Change /TN "SamsungMagician" /Disable
 soundvolumeview /SetVolume "ATR USB microphone\Device\Microphone\Capture" 90
 soundvolumeview /SetVolume "ATR USB microphone\Device\Speakers\Render" 50
